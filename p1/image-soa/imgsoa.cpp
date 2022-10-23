@@ -35,4 +35,50 @@ const int GAUSS[5][5] = {{1, 4, 7, 4, 1},
 //-------------------------------------
 int main(int argc, char *argv[])
 {
-    progargs.argsCheck(int argc, char *argv[])
+    // tratamiento de la salida
+    cout << "Input path: " << argv[0] << endl;
+    cout << "Output path: " << argv[1] << endl;
+
+    // Bucle para cada uno de los ficheros
+    for (auto &entrada : std::filesystem::directory_iterator(argv[0])) {
+        auto tIni = clk::now(); // Tiempo inicial
+        inFile.open(entrada.path(), ifstream::binary);
+        if (inFile.fail()) { // Si no se puede abrir el fichero
+            cerr << "Couldn't open the file\n";
+            inFile.close();
+            continue;
+        }
+        char *buffer = new char[54]; // Buffer para leer la cabecera
+        inFile.read(buffer, 54);
+        int comprHeader = getHeader(buffer, entrada.path());
+        if (comprHeader < 0) { // Si hay algun error al leer la cabecera
+            inFile.close();
+            continue;
+        }
+        string fileOut = entrada.path();
+        fileOut = fileOut.substr(((string) argv[0]).length());
+        string pathOut = argv[1] + fileOut; // Path del fichero de salida
+        outFile.open(pathOut, ifstream::binary);
+        cout << "File: " << entrada.path();
+
+        // APLICACION DE OPERACIONES
+        struct soa_img {
+            int rojo[height * width];
+            int verde[height * width];
+            int azul[height * width];
+        }
+        inFile.seekg(start); // Se posiciona donde empiezan los datos de la imagen
+        getData(soa_img);
+
+        auto tLoad = clk::now(); // Tiempo carga
+        clk::time_point tGauss;
+        clk::time_point tHisto;
+        clk::time_point tMono;
+
+        struct new_soa_img {
+            int rojo[height * width];
+            int verde[height * width];
+            int azul[height * width];
+        }
+        return 0;
+    }
