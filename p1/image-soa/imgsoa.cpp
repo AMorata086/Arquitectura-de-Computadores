@@ -5,6 +5,7 @@
 #include <filesystem>
 #include <cmath>
 #include <chrono>
+#include "./soa/soa.h"
 using namespace std;
 using namespace std::chrono;
 using clk = chrono::high_resolution_clock;
@@ -39,46 +40,49 @@ int main(int argc, char *argv[])
     cout << "Input path: " << argv[0] << endl;
     cout << "Output path: " << argv[1] << endl;
 
+    struct bmpHeader header;
+
     // Bucle para cada uno de los ficheros
-    for (auto &entrada : std::filesystem::directory_iterator(argv[0])) {
+    for (auto &entrada : std::filesystem::directory_iterator(argv[0]))
+    {
         auto tIni = clk::now(); // Tiempo inicial
         inFile.open(entrada.path(), ifstream::binary);
-        if (inFile.fail()) { // Si no se puede abrir el fichero
+        if (inFile.fail())
+        { // Si no se puede abrir el fichero
             cerr << "Couldn't open the file\n";
             inFile.close();
             continue;
         }
         char *buffer = new char[54]; // Buffer para leer la cabecera
         inFile.read(buffer, 54);
-        int comprHeader = getHeader(buffer, entrada.path());
-        if (comprHeader < 0) { // Si hay algun error al leer la cabecera
+        int comprHeader = getHeader(header, buffer, entrada.path());
+        if (comprHeader < 0)
+        { // Si hay algun error al leer la cabecera
             inFile.close();
             continue;
         }
         string fileOut = entrada.path();
-        fileOut = fileOut.substr(((string) argv[0]).length());
+        fileOut = fileOut.substr(((string)argv[0]).length());
         string pathOut = argv[1] + fileOut; // Path del fichero de salida
         outFile.open(pathOut, ifstream::binary);
         cout << "File: " << entrada.path();
 
         // APLICACION DE OPERACIONES
-        struct soa_img {
-            int rojo[height * width];
-            int verde[height * width];
-            int azul[height * width];
-        }
-        inFile.seekg(start); // Se posiciona donde empiezan los datos de la imagen
-        getData(soa_img);
+        struct soa_img image;
+
+        inFile.seekg(header.offset); // Se posiciona donde empiezan los datos de la imagen
+        getDataSOA(inFile, header.height, header.width, image);
 
         auto tLoad = clk::now(); // Tiempo carga
         clk::time_point tGauss;
         clk::time_point tHisto;
         clk::time_point tMono;
 
-        struct new_soa_img {
+        struct new_soa_img
+        {
             int rojo[height * width];
             int verde[height * width];
             int azul[height * width];
-        }
+        };
         return 0;
     }

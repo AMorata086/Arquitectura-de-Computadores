@@ -5,6 +5,7 @@
 #include <filesystem>
 #include <cmath>
 #include <chrono>
+#include "./aos/aos.h"
 using namespace std;
 using namespace std::chrono;
 using clk = chrono::high_resolution_clock;
@@ -35,15 +36,19 @@ const int GAUSS[5][5] = {{1, 4, 7, 4, 1},
 //-------------------------------------
 int main(int argc, char *argv[])
 {
+    // vector<struct img_aos> image;
+
     // tratamiento de la salida
     cout << "Input path: " << argv[0] << endl;
     cout << "Output path: " << argv[1] << endl;
 
     // Bucle para cada uno de los ficheros
-    for (auto &entrada : std::filesystem::directory_iterator(argv[0])) {
+    for (auto &entrada : std::filesystem::directory_iterator(argv[0]))
+    {
         auto tIni = clk::now(); // Tiempo inicial
         inFile.open(entrada.path(), ifstream::binary);
-        if (inFile.fail()) { // Si no se puede abrir el fichero
+        if (inFile.fail())
+        { // Si no se puede abrir el fichero
             cerr << "Couldn't open the file\n";
             inFile.close();
             continue;
@@ -51,12 +56,13 @@ int main(int argc, char *argv[])
         char *buffer = new char[54]; // Buffer para leer la cabecera
         inFile.read(buffer, 54);
         int comprHeader = getHeader(buffer, entrada.path());
-        if (comprHeader < 0) { // Si hay algun error al leer la cabecera
+        if (comprHeader < 0)
+        { // Si hay algun error al leer la cabecera
             inFile.close();
             continue;
         }
         string fileOut = entrada.path();
-        fileOut = fileOut.substr(((string) argv[0]).length());
+        fileOut = fileOut.substr(((string)argv[0]).length());
         string pathOut = argv[1] + fileOut; // Path del fichero de salida
         outFile.open(pathOut, ifstream::binary);
         cout << "File: " << entrada.path();
@@ -71,7 +77,7 @@ int main(int argc, char *argv[])
         aos_img image[height * width];
 
         inFile.seekg(start); // Se posiciona donde empiezan los datos de la imagen
-        getData(soa_img);
+        getData(aos_img);
 
         auto tLoad = clk::now(); // Tiempo carga
         clk::time_point tGauss;
