@@ -106,9 +106,9 @@ int main(int argc, char *argv[])
 
         //APLICACION DE OPERACIONES
         struct data1 {
-            int azul [height];
-            int verde [height];
-            int rojo [height];
+            int azul [height*width];
+            int verde [height*width];
+            int rojo [height*width];
         };
         inFile.seekg(start);//Se posiciona donde empiezan los datos de la imagen
         getData(data1);
@@ -118,17 +118,6 @@ int main(int argc, char *argv[])
         clk::time_point tHisto;
         clk::time_point tMono;
 
-        struct {
-            vec<int> v;
-            int verde [height];
-            int rojo [height];
-        } newdata1;
-
-        struct pyxel2 {
-            int azul
-            int verde
-            int rojo
-        };
         for(int i=1; i <= width*height; i++){
             vector
         }
@@ -236,7 +225,7 @@ int getHeader(char*  buffer, string path){
  *Azul31
  *.
  */
-void getDataSOA(struct data1){
+void getDataSOA(struct newdata1){
     char* pixel=new char[3];
     int extra=4-((width*3)%4);//Para los bytes de padding
     for(int i=0;i<height;i++){
