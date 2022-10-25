@@ -5,7 +5,8 @@
 #include <filesystem>
 #include <cmath>
 #include <chrono>
-#include "./soa/soa.h"
+#include "./soa/soa.hpp"
+#include "./common/gethead.hpp"
 using namespace std;
 using namespace std::chrono;
 using clk = chrono::high_resolution_clock;
@@ -36,6 +37,9 @@ const int GAUSS[5][5] = {{1, 4, 7, 4, 1},
 //-------------------------------------
 int main(int argc, char *argv[])
 {
+    // Comprobacion de argumentos
+    int comprobar = argsCheck(argc, argv);
+
     // tratamiento de la salida
     cout << "Input path: " << argv[0] << endl;
     cout << "Output path: " << argv[1] << endl;
