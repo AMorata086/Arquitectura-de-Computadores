@@ -1,5 +1,6 @@
 #include "gethead.hpp"
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -25,7 +26,7 @@ struct bmpHeader
     uint32_t important_c; /* Contador de colores importantes. 0 si son todos */
 };
 
-int getHeader(char buffer[], string path, struct bmpHeader header)
+int getHeader(char buffer[], string path, struct bmpHeader &header)
 {
 
     string error = "Error processing \"" + path + "\"\n";
@@ -34,7 +35,6 @@ int getHeader(char buffer[], string path, struct bmpHeader header)
     {
         cerr << error << " It isn't a bmp format\n";
         return -1;
-        // exit(-1);
     }
     header.caracB = buffer[0];
     header.caracM = buffer[1];
@@ -68,29 +68,66 @@ int getHeader(char buffer[], string path, struct bmpHeader header)
     header.colors = (unsigned char)buffer[46] + (unsigned char)buffer[47] * 256 + (unsigned char)buffer[48] * 65536 + (unsigned char)buffer[49] * 16777216;
     header.important_c = (unsigned char)buffer[50] + (unsigned char)buffer[51] * 256 + (unsigned char)buffer[52] * 65536 + (unsigned char)buffer[53] * 16777216;
 
-    cout << header.file_size << endl;
-    cout << header.width << endl;
-    cout << header.height << endl;
-
     return 0;
 }
 // Escribir los datos obligatorios en el header
-int writeHeader(ofstream outFile, struct bmpHeader header)
+int writeHeader(string path, struct bmpHeader &header)
 {
-    outFile.write((char *)header.caracB, 1);
-    outFile.write((char *)header.caracM, 1);
-    outFile.write((char *)header.file_size, 4);
-    outFile.write((char *)header.reserved, 4);
-    outFile.write((char *)header.offset, 4);
-    outFile.write((char *)header.header_size, 4);
-    outFile.write((char *)header.width, 4);
-    outFile.write((char *)header.height, 4);
-    outFile.write((char *)header.planes, 2);
-    outFile.write((char *)header.bpp, 2);
-    outFile.write((char *)header.compress, 4);
-    outFile.write((char *)header.img_size, 4);
-    outFile.write((char *)header.res_x, 4);
-    outFile.write((char *)header.res_y, 4);
-    outFile.write((char *)header.colors, 4);
-    outFile.write((char *)header.important_c, 4);
+    ofstream outFile;
+    outFile.open(path, ifstream::binary);
+    outFile.seekp(0, ios::beg);
+    char newHeader[4] = {'B', 'M'};
+
+    outFile.write(newHeader, 2);
+    int size = header.file_size;
+    newHeader[0] = (header.file_size) & 0xFF;
+    newHeader[1] = ((header.file_size) >> 8) & 0xFF;
+    newHeader[2] = ((header.file_size) >> 16) & 0xFF;
+    newHeader[3] = ((header.file_size) >> 24) & 0xFF;
+    outFile.write(newHeader, 4);
+    newHeader[0] = (header.offset) & 0xFF;
+    newHeader[1] = ((header.offset) >> 8) & 0xFF;
+    newHeader[2] = ((header.offset) >> 16) & 0xFF;
+    newHeader[3] = ((header.offset) >> 24) & 0xFF;
+    outFile.seekp(10, ios::beg);
+    outFile.write(newHeader, 4);
+    newHeader[0] = (header.header_size) & 0xFF;
+    newHeader[1] = ((header.header_size) >> 8) & 0xFF;
+    newHeader[2] = ((header.header_size) >> 16) & 0xFF;
+    newHeader[3] = ((header.header_size) >> 24) & 0xFF;
+    outFile.write(newHeader, 4);
+    newHeader[0] = (header.width) & 0xFF;
+    newHeader[1] = ((header.width) >> 8) & 0xFF;
+    newHeader[2] = ((header.width) >> 16) & 0xFF;
+    newHeader[3] = ((header.width) >> 24) & 0xFF;
+    outFile.write(newHeader, 4);
+    newHeader[0] = (header.height) & 0xFF;
+    newHeader[1] = ((header.height) >> 8) & 0xFF;
+    newHeader[2] = ((header.height) >> 16) & 0xFF;
+    newHeader[3] = ((header.height) >> 24) & 0xFF;
+    outFile.write(newHeader, 4);
+    newHeader[0] = (1) & 0xFF;
+    newHeader[1] = ((1) >> 8) & 0xFF;
+    outFile.write(newHeader, 2);
+    newHeader[0] = (24) & 0xFF;
+    newHeader[1] = ((24) >> 8) & 0xFF;
+    outFile.write(newHeader, 2);
+    newHeader[0] = (0) & 0xFF;
+    newHeader[1] = ((0) >> 8) & 0xFF;
+    newHeader[2] = ((0) >> 16) & 0xFF;
+    newHeader[3] = ((0) >> 24) & 0xFF;
+    outFile.write(newHeader, 4);
+    newHeader[0] = (header.img_size) & 0xFF;
+    newHeader[1] = ((header.img_size) >> 8) & 0xFF;
+    newHeader[2] = ((header.img_size) >> 16) & 0xFF;
+    newHeader[3] = ((header.img_size) >> 24) & 0xFF;
+    outFile.write(newHeader, 4);
+    outFile.write(newHeader, 4);
+    outFile.write(newHeader, 4);
+    outFile.write(newHeader, 4);
+    outFile.write(newHeader, 4);
+
+    outFile.close();
+
+    return 0;
 }

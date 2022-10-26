@@ -4,6 +4,7 @@
 #include <dirent.h>
 #include <cmath>
 #include <chrono>
+#include <vector>
 #include <filesystem>
 #include "../aos/aos.hpp"
 #include "../common/progargs.hpp"
@@ -52,7 +53,6 @@ int main(int argc, char *argv[])
     ifstream inFile;
     ofstream outFile;
     struct bmpHeader header;
-
     for (auto &entrada : filesystem::directory_iterator(argv[1]))
     {
         cout << "Imagen: " << entrada.path() << endl;
@@ -67,6 +67,7 @@ int main(int argc, char *argv[])
         }
         char buffer[54]; // Buffer para leer la cabecera
         inFile.read(buffer, 54);
+
         int comprHeader = getHeader(buffer, entrada.path(), header);
         if (comprHeader < 0)
         { // Si hay algun error al leer la cabecera
@@ -74,36 +75,40 @@ int main(int argc, char *argv[])
             continue;
         }
 
-        string fileOut = entrada.path();
-        fileOut = fileOut.substr(((string)argv[1]).length());
-        string pathOut = argv[2] + fileOut; // Path del fichero de salida
-        outFile.open(pathOut, ifstream::binary);
-        cout << "File: " << entrada.path() << endl;
-
-        outFile.seekp(0);          // Se posiciona al inicio
-        outFile.write(buffer, 54); // Escribe el buffer inicial
         // APLICACION DE OPERACIONES
-        /*
-        struct data1
-        {
-            int azul[height * width];
-            int verde[height * width];
-            int rojo[height * width];
-        };
-        inFile.seekg(start); // Se posiciona donde empiezan los datos de la imagen
-        getData(data1);
 
-        auto tLoad = clk::now(); // Tiempo carga
+        vector<struct aos_img> data;
+
+        inFile.close();
+
+        string path = entrada.path();
+
+        cout << "File size: " << header.file_size << "\n Width: " << header.width << "\n Height: " << header.height << endl;
+
+        getDataAOS(header, data, path);
+
+        vector<struct aos_img> newdata;
+
+        path = path.substr(((string)argv[1]).length());
+        string pathOut = argv[2] + path; // Path del fichero de salida
+        writeHeader(pathOut, header);
+        writeDataAOS(header, data, pathOut);
+
+        /*auto tLoad = clk::now(); // Tiempo carga
+        clk::time_point tCopy;
         clk::time_point tGauss;
         clk::time_point tHisto;
-        clk::time_point tMono;
+        clk::time_point tMono;*/
 
-        for (int i = 1; i <= width * height; i++)
-        {
-            vector
-        }
-
-        if (strcmp(argv[1], "copy") != 0)
+        // if (strcmp(argv[3], "copy") != 0)
+        // {
+        //     gauss(data, newdata)cout << 'No es copy' << endl;
+        // }
+        // if (strcmp(argv[3], "gauss") != 0)
+        // {
+        //
+        // }
+        /*if (strcmp(argv[1], "copy") != 0)
         { // Si hay que hacer gauss o sobel
             gauss(newdata1, data);
             tGauss = clk::now(); // Tiempo gauss
@@ -116,13 +121,14 @@ int main(int argc, char *argv[])
         outFile.seekp(0);          // Se posiciona al inicio
         outFile.write(buffer, 54); // Escribe el buffer inicial
         writeHeader();             // Le cambia los datos a los obligatorios(Ej: inicio datos: 54)
-        if (strcmp(argv[1], "gauss") == 0)
+
+        if (strcmp(argv[1], "gauss") == 0 || strcmp(argv[1], "mono") == 0)
             writeData(newdata); // Si es gauss escribe de la nueva
         else
-            writeData(data); // Para sobel o copy los nuevos datos están en data
+            writeData(data); // copy los nuevos datos están en data
         free(data);
-        free(newdata);*/
-        inFile.close();
+        free(newdata);
+
         outFile.close();
 
         /*auto tFin = clk::now(); // Tiempo final

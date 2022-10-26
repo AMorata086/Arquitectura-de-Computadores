@@ -8,7 +8,7 @@ using namespace std;
 
 typedef struct bmpHeader;
 
-int getHeader(char buffer[], string path, struct bmpHeader header);
-int writeHeader(ofstream outFile, struct bmpHeader header);
+int getHeader(char buffer[], string path, struct bmpHeader &header);
+int writeHeader(string path, struct bmpHeader &header);
 
 #endif

@@ -2,15 +2,19 @@
 #include <iostream>
 #include <cstring>
 #include <dirent.h>
-#include <filesystem>
 #include <cmath>
 #include <chrono>
-#include "./soa/soa.hpp"
-#include "./common/gethead.hpp"
+#include <vector>
+#include <filesystem>
+#include "../soa/soa.hpp"
+#include "../common/progargs.hpp"
+#include "../common/gethead.hpp"
+
 using namespace std;
-using namespace std::chrono;
+
 using clk = chrono::high_resolution_clock;
-// Declaraciones de Funciones
+
+/*// Declaraciones de Funciones
 int getHeader(char *header, string path);
 void getData(int **data);
 void writeHeader();
@@ -32,19 +36,127 @@ const int GAUSS[5][5] = {{1, 4, 7, 4, 1},
                          {4, 16, 26, 16, 4},
                          {7, 26, 41, 26, 7},
                          {4, 16, 26, 16, 4},
-                         {1, 4, 7, 4, 1}};
+                         {1, 4, 7, 4, 1}};*/
 
 //-------------------------------------
 int main(int argc, char *argv[])
 {
     // Comprobacion de argumentos
-    int comprobar = argsCheck(argc, argv);
+    if (argsCheck(argc, argv) == -1)
+    {
+        return -1;
+    }
 
-    // tratamiento de la salida
-    cout << "Input path: " << argv[0] << endl;
-    cout << "Output path: " << argv[1] << endl;
+    cout << "Input path: " << argv[1] << "\n";
+    cout << "Output path: " << argv[2] << "\n";
 
+    ifstream inFile;
+    ofstream outFile;
     struct bmpHeader header;
+    for (auto &entrada : filesystem::directory_iterator(argv[1]))
+    {
+        cout << "Imagen: " << entrada.path() << endl;
+
+        inFile.open(entrada.path(), ifstream::binary);
+
+        if (inFile.fail())
+        { // Si no se puede abrir el fichero
+            cerr << "Couldn't open the file: " << entrada.path() << endl;
+            inFile.close();
+            continue;
+        }
+        char buffer[54]; // Buffer para leer la cabecera
+        inFile.read(buffer, 54);
+
+        int comprHeader = getHeader(buffer, entrada.path(), header);
+        if (comprHeader < 0)
+        { // Si hay algun error al leer la cabecera
+            inFile.close();
+            continue;
+        }
+
+        /*string fileOut = entrada.path();
+        fileOut = fileOut.substr(((string)argv[1]).length());
+        string pathOut = argv[2] + fileOut; // Path del fichero de salida
+        outFile.open(pathOut, ifstream::binary);*/
+
+        // APLICACION DE OPERACIONES
+
+        struct soa_img data;
+
+        inFile.close();
+
+        string path = entrada.path();
+
+        getDataSOA(header, data, path);
+
+        struct soa_img newdata;
+
+        auto tLoad = clk::now(); // Tiempo carga
+        clk::time_point tCopy;
+        clk::time_point tGauss;
+        clk::time_point tHisto;
+        clk::time_point tMono;
+
+        // if (strcmp(argv[3], "copy") != 0)
+        // {
+        //     gauss(data, newdata)cout << 'No es copy' << endl;
+        // }
+        // if (strcmp(argv[3], "gauss") != 0)
+        // {
+        //
+        // }
+        /* if (strcmp(argv[1], "copy") != 0)
+        { // Si hay que hacer gauss o sobel
+            gauss(newdata1, data);
+            tGauss = clk::now(); // Tiempo gauss
+            if (strcmp(argv[1], "sobel") == 0)
+            {
+                sobel(data, newdata); // En vez de crear otra matriz reutilizo la inicial
+                tSobel = clk::now();  // Tiempo sobel
+            }
+        }
+        outFile.seekp(0);          // Se posiciona al inicio
+        outFile.write(buffer, 54); // Escribe el buffer inicial
+        writeHeader();             // Le cambia los datos a los obligatorios(Ej: inicio datos: 54)
+        if (strcmp(argv[1], "gauss") == 0)
+            writeData(newdata); // Si es gauss escribe de la nueva
+        else
+            writeData(data); // Para sobel o copy los nuevos datos están en data
+        free(data);
+        free(newdata);
+        * /
+            outFile.close();
+
+        /*auto tFin = clk::now(); // Tiempo final
+
+        // CALCULO DE TIEMPOS
+        auto ttotal = duration_cast<microseconds>(tFin - tIni);
+        auto tcarga = duration_cast<microseconds>(tLoad - tIni);
+        duration<double> tescritura;
+        cout << "(time: " << ttotal.count() << ")" << endl;
+        cout << " Load time: " << tcarga.count() << endl;
+
+        if (strcmp(argv[1], "copy") != 0)
+        {
+            auto tG = duration_cast<microseconds>(tGauss - tLoad);
+            cout << " Gauss time: " << tG.count() << endl;
+
+            if (strcmp(argv[1], "sobel") == 0)
+            {
+                auto tS = duration_cast<microseconds>(tSobel - tGauss);
+                cout << " Sobel time: " << tS.count() << endl;
+                tescritura = duration_cast<microseconds>(tFin - tSobel);
+            }
+
+            else
+                tescritura = duration_cast<microseconds>(tFin - tGauss);
+        }
+        else
+            tescritura = duration_cast<microseconds>(tFin - tLoad);
+        cout << " Store time: " << (int)(tescritura.count() * 1000000) << endl;*/
+    }
+    /*
 
     // Bucle para cada uno de los ficheros
     for (auto &entrada : std::filesystem::directory_iterator(argv[0]))
@@ -59,7 +171,7 @@ int main(int argc, char *argv[])
         }
         char *buffer = new char[54]; // Buffer para leer la cabecera
         inFile.read(buffer, 54);
-        int comprHeader = getHeader(header, buffer, entrada.path());
+        int comprHeader = getHeader(buffer, entrada.path());
         if (comprHeader < 0)
         { // Si hay algun error al leer la cabecera
             inFile.close();
@@ -72,21 +184,31 @@ int main(int argc, char *argv[])
         cout << "File: " << entrada.path();
 
         // APLICACION DE OPERACIONES
-        struct soa_img image;
+        struct aos_img
+        {
+            int azul;
+            int verde;
+            int rojo;
+        };
+        aos_img image[height * width];
 
-        inFile.seekg(header.offset); // Se posiciona donde empiezan los datos de la imagen
-        getDataSOA(inFile, header.height, header.width, image);
+        inFile.seekg(start); // Se posiciona donde empiezan los datos de la imagen
+        getData(aos_img);
 
         auto tLoad = clk::now(); // Tiempo carga
         clk::time_point tGauss;
         clk::time_point tHisto;
         clk::time_point tMono;
 
-        struct new_soa_img
+        struct new_aos_img
         {
-            int rojo[height * width];
-            int verde[height * width];
-            int azul[height * width];
+            int azul;
+            int verde;
+            int rojo;
         };
+
+        new_aos_img image[height * width];
         return 0;
     }
+*/
+}

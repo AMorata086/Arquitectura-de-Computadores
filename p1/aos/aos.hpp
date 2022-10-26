@@ -4,17 +4,13 @@
 #include <fstream>
 #include <cstring>
 #include <string>
+#include "imageaos.cpp"
 
 using namespace std;
 
-struct aos_img
-{
-    int azul;
-    int verde;
-    int rojo;
-};
+typedef struct aos_img;
 
-void getDataAOS(ifstream inFile, int height, int width, struct aos_img image[]);
+void getDataAOS(struct bmpHeader &header, vector<struct aos_img> &image, string path);
 void writeDataAOS(ofstream outFile, int height, int width, struct aos_img image[]);
 
 #endif
