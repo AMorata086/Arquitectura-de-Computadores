@@ -4,6 +4,7 @@
 #include <dirent.h>
 #include <filesystem>
 #include <cmath>
+#include <vector>
 #include "aos.hpp"
 #include "../common/gethead.hpp"
 
@@ -39,48 +40,92 @@ void getDataAOS(struct bmpHeader &header, vector<struct aos_img> &image, string 
 void writeDataAOS(struct bmpHeader &header, vector<struct aos_img> &image, string path)
 {
     ofstream outFile;
-    outFile.open(path, ifstream::binary);
-    outFile.seekp(header.offset, ios::beg);
-    char palabra[4];
+    outFile.open(path, ios::binary);
+
+    outFile.seekp(0, ios::beg);
+    char newHeader[4] = {'B', 'M'};
+
+    outFile.write(newHeader, 2);
+    int size = header.file_size;
+    newHeader[0] = (header.file_size) & 0xFF;
+    newHeader[1] = ((header.file_size) >> 8) & 0xFF;
+    newHeader[2] = ((header.file_size) >> 16) & 0xFF;
+    newHeader[3] = ((header.file_size) >> 24) & 0xFF;
+    outFile.write(newHeader, 4);
+    newHeader[0] = (header.offset) & 0xFF;
+    newHeader[1] = ((header.offset) >> 8) & 0xFF;
+    newHeader[2] = ((header.offset) >> 16) & 0xFF;
+    newHeader[3] = ((header.offset) >> 24) & 0xFF;
+    outFile.seekp(10, ios::beg);
+    outFile.write(newHeader, 4);
+    newHeader[0] = (header.header_size) & 0xFF;
+    newHeader[1] = ((header.header_size) >> 8) & 0xFF;
+    newHeader[2] = ((header.header_size) >> 16) & 0xFF;
+    newHeader[3] = ((header.header_size) >> 24) & 0xFF;
+    outFile.write(newHeader, 4);
+    newHeader[0] = (header.width) & 0xFF;
+    newHeader[1] = ((header.width) >> 8) & 0xFF;
+    newHeader[2] = ((header.width) >> 16) & 0xFF;
+    newHeader[3] = ((header.width) >> 24) & 0xFF;
+    outFile.write(newHeader, 4);
+    newHeader[0] = (header.height) & 0xFF;
+    newHeader[1] = ((header.height) >> 8) & 0xFF;
+    newHeader[2] = ((header.height) >> 16) & 0xFF;
+    newHeader[3] = ((header.height) >> 24) & 0xFF;
+    outFile.write(newHeader, 4);
+    newHeader[0] = (1) & 0xFF;
+    newHeader[1] = ((1) >> 8) & 0xFF;
+    outFile.write(newHeader, 2);
+    newHeader[0] = (24) & 0xFF;
+    newHeader[1] = ((24) >> 8) & 0xFF;
+    outFile.write(newHeader, 2);
+    newHeader[0] = (0) & 0xFF;
+    newHeader[1] = ((0) >> 8) & 0xFF;
+    newHeader[2] = ((0) >> 16) & 0xFF;
+    newHeader[3] = ((0) >> 24) & 0xFF;
+    outFile.write(newHeader, 4);
+    newHeader[0] = (header.img_size) & 0xFF;
+    newHeader[1] = ((header.img_size) >> 8) & 0xFF;
+    newHeader[2] = ((header.img_size) >> 16) & 0xFF;
+    newHeader[3] = ((header.img_size) >> 24) & 0xFF;
+    outFile.write(newHeader, 4);
+    outFile.write(newHeader, 4);
+    outFile.write(newHeader, 4);
+    outFile.write(newHeader, 4);
+    outFile.write(newHeader, 4);
+
+    cout << "Offset: " << header.offset << endl;
+    outFile.seekp(header.offset, ios_base::beg);
+    char pixel[3];
     char ext[3] = {0, 0, 0};
     int extra = 4 - ((header.width * 3) % 4); // Para el padding
-    int counter = 1;
-    for (int i = 0; i < (header.height * header.width); i++)
+    int counter = 0;
+    for (int i = 0; i < (header.height); i++)
     {
-        switch (counter)
+        for (int j = 0; j < header.width; j++)
         {
-        case 1:
-            palabra[0] = image[i].azul;
-            palabra[1] = image[i].verde;
-            palabra[2] = image[i].rojo;
-            palabra[3] = image[i + 1].azul;
-            break;
-        case 2:
-            palabra[0] = image[i].verde;
-            palabra[1] = image[i].rojo;
-            palabra[2] = image[i + 1].azul;
-            palabra[3] = image[i + 1].verde;
-            break;
-        case 3:
-            palabra[0] = image[i].rojo;
-            palabra[1] = image[i + 1].azul;
-            palabra[2] = image[i + 1].verde;
-            palabra[3] = image[i + 1].rojo;
-            break;
-        case 4:
-            break;
-        }
-        if (counter % 4 != 0)
+            pixel[0] = image[counter].azul;
+            pixel[1] = image[counter].verde;
+            pixel[2] = image[counter].rojo;
             counter++;
-        else
-            counter = 1;
+            outFile.write(pixel, 3);
 
-        outFile.write(palabra, 4);
+            if (j == ((header.width - 1)) && extra < 4)
+                outFile.write(ext, extra);
+        }
+
         // Si hay padding lo escribe al final de la linea
-        if (i % (header.width) == 0 && extra < 4)
-            outFile.write(ext, extra);
-        outFile.close();
+        /*if (extra > 0)
+            outFile.write(ext, extra);*/
     }
+    outFile.close();
+
+    // ifstream fileTest;
+    // fileTest.open(path, ifstream::binary);
+    // char buffer[54];
+    // fileTest.read(buffer, 54);
+    // cout << buffer << endl;
+    // fileTest.close();
 
     // Escribir los datos nuevos
     // void writeData(int **newdata)

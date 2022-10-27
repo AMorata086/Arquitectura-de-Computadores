@@ -11,6 +11,6 @@ using namespace std;
 typedef struct aos_img;
 
 void getDataAOS(struct bmpHeader &header, vector<struct aos_img> &image, string path);
-void writeDataAOS(ofstream outFile, int height, int width, struct aos_img image[]);
+void writeDataAOS(struct bmpHeader &header, vector<struct aos_img> &image, string path);
 
 #endif

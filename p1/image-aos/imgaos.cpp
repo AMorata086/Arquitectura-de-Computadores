@@ -91,8 +91,13 @@ int main(int argc, char *argv[])
 
         path = path.substr(((string)argv[1]).length());
         string pathOut = argv[2] + path; // Path del fichero de salida
-        writeHeader(pathOut, header);
-        writeDataAOS(header, data, pathOut);
+        // writeHeader(pathOut, header);
+
+        // operacion copy
+        if (strcmp(argv[3], "copy") == 0)
+        {
+            writeDataAOS(header, data, pathOut);
+        }
 
         /*auto tLoad = clk::now(); // Tiempo carga
         clk::time_point tCopy;

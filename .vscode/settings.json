@@ -56,5 +56,6 @@
         "typeinfo": "cpp"
     },
     "debug.console.fontFamily": "Consolas, 'Courier New', monospace",
-    "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace"
+    "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
+    "cmake.sourceDirectory": "${workspaceFolder}/p1"
 }

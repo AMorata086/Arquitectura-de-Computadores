@@ -92,11 +92,17 @@ int main(int argc, char *argv[])
 
         struct soa_img newdata;
 
-        auto tLoad = clk::now(); // Tiempo carga
-        clk::time_point tCopy;
-        clk::time_point tGauss;
-        clk::time_point tHisto;
-        clk::time_point tMono;
+        path = path.substr(((string)argv[1]).length());
+        string pathOut = argv[2] + path; // Path del fichero de salida
+        // writeHeader(pathOut, header);
+        if (strcmp(argv[3], "copy") == 0)
+            writeDataSOA(header, data, pathOut);
+
+        // auto tLoad = clk::now(); // Tiempo carga
+        // clk::time_point tCopy;
+        // clk::time_point tGauss;
+        // clk::time_point tHisto;
+        // clk::time_point tMono;
 
         // if (strcmp(argv[3], "copy") != 0)
         // {

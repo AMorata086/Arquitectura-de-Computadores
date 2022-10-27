@@ -7,6 +7,6 @@
 typedef struct soa_img;
 
 void getDataSOA(struct bmpHeader &header, struct soa_img &image, string path);
-void writeDataSOA(ofstream outFile, int height, int width, struct soa_img image);
+void writeDataSOA(struct bmpHeader &header, struct soa_img &image, string path);
 
 #endif
