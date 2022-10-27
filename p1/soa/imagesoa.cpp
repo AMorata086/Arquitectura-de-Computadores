@@ -26,7 +26,7 @@ void getDataSOA(struct bmpHeader &header, struct soa_img &image, string path)
     inFile.seekg(header.offset, ios::beg);
     char pixel[4];
     int extra = 4 - ((header.width * 3) % 4); // Para los bytes de padding
-    for (int i = 0; i < (header.height * header.width); i++)
+    for (int i = 1; i <= (header.height * header.width); i++)
     {
         inFile.read(pixel, 3);
 
