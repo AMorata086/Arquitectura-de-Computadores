@@ -3,12 +3,15 @@
 #include <cstring>
 #include <dirent.h>
 #include <filesystem>
+#include <chrono>
 #include <cmath>
 #include <vector>
 #include "soa.hpp"
 #include "../common/gethead.hpp"
 
 using namespace std;
+using namespace std::chrono;
+using clk = chrono::high_resolution_clock;
 
 struct soa_img
 {
@@ -31,8 +34,8 @@ void getDataSOA(struct bmpHeader &header, struct soa_img &image, string path)
     inFile.open(path, ifstream::binary);
     inFile.seekg(header.offset, ios::beg);
     char pixel[4];
-    int extra = 4 - ((header.width * 3) % 4); // Para los bytes de padding
-    for (int i = 1; i <= (header.height * header.width); i++)
+    int extra = 4 - (((int)(header.width) * 3) % 4); // Para los bytes de padding
+    for (int i = 1; i <= ((int)(header.height) * (int)(header.width)); i++)
     {
         inFile.read(pixel, 3);
 
@@ -40,14 +43,14 @@ void getDataSOA(struct bmpHeader &header, struct soa_img &image, string path)
         image.verde.push_back((int)(unsigned char)pixel[1]);
         image.rojo.push_back((int)(unsigned char)pixel[2]);
         // Si hay padding, lo lee pero no lo guarda
-        if (i % (header.width) == 0 && extra < 4)
+        if (i % ((int)(header.width)) == 0 && extra < 4)
             inFile.read(pixel, extra);
     }
     inFile.close();
 }
 
 // Escribir los datos nuevos para SOA
-void writeDataSOA(struct bmpHeader &header, struct soa_img &image, string path)
+void writeFileSOA(struct bmpHeader &header, struct soa_img &image, string path)
 {
     ofstream outFile;
     outFile.open(path, ios::binary);
@@ -56,7 +59,6 @@ void writeDataSOA(struct bmpHeader &header, struct soa_img &image, string path)
     char newHeader[4] = {'B', 'M'};
 
     outFile.write(newHeader, 2);
-    int size = header.file_size;
     newHeader[0] = (header.file_size) & 0xFF;
     newHeader[1] = ((header.file_size) >> 8) & 0xFF;
     newHeader[2] = ((header.file_size) >> 16) & 0xFF;
@@ -73,15 +75,15 @@ void writeDataSOA(struct bmpHeader &header, struct soa_img &image, string path)
     newHeader[2] = ((header.header_size) >> 16) & 0xFF;
     newHeader[3] = ((header.header_size) >> 24) & 0xFF;
     outFile.write(newHeader, 4);
-    newHeader[0] = (header.width) & 0xFF;
-    newHeader[1] = ((header.width) >> 8) & 0xFF;
-    newHeader[2] = ((header.width) >> 16) & 0xFF;
-    newHeader[3] = ((header.width) >> 24) & 0xFF;
+    newHeader[0] = ((int)(header.width)) & 0xFF;
+    newHeader[1] = (((int)(header.width)) >> 8) & 0xFF;
+    newHeader[2] = (((int)(header.width)) >> 16) & 0xFF;
+    newHeader[3] = (((int)(header.width)) >> 24) & 0xFF;
     outFile.write(newHeader, 4);
-    newHeader[0] = (header.height) & 0xFF;
-    newHeader[1] = ((header.height) >> 8) & 0xFF;
-    newHeader[2] = ((header.height) >> 16) & 0xFF;
-    newHeader[3] = ((header.height) >> 24) & 0xFF;
+    newHeader[0] = ((int)(header.height)) & 0xFF;
+    newHeader[1] = (((int)(header.height)) >> 8) & 0xFF;
+    newHeader[2] = (((int)(header.height)) >> 16) & 0xFF;
+    newHeader[3] = (((int)(header.height)) >> 24) & 0xFF;
     outFile.write(newHeader, 4);
     newHeader[0] = (1) & 0xFF;
     newHeader[1] = ((1) >> 8) & 0xFF;
@@ -107,11 +109,11 @@ void writeDataSOA(struct bmpHeader &header, struct soa_img &image, string path)
     outFile.seekp(header.offset, ios_base::beg);
     char pixel[3];
     char ext[3] = {0, 0, 0};
-    int extra = 4 - ((header.width * 3) % 4); // Para el padding
+    int extra = 4 - (((int)(header.width) * 3) % 4); // Para el padding
     int counter = 0;
-    for (int i = 0; i < (header.height); i++)
+    for (int i = 0; i < ((int)(header.height)); i++)
     {
-        for (int j = 0; j < header.width; j++)
+        for (int j = 0; j < (int)(header.width); j++)
         {
             pixel[0] = image.azul[counter];
             pixel[1] = image.verde[counter];
@@ -119,7 +121,7 @@ void writeDataSOA(struct bmpHeader &header, struct soa_img &image, string path)
             counter++;
             outFile.write(pixel, 3);
 
-            if (j == ((header.width - 1)) && extra < 4)
+            if (j == (((int)(header.width) - 1)) && extra < 4)
                 outFile.write(ext, extra);
         }
 
@@ -131,61 +133,116 @@ void writeDataSOA(struct bmpHeader &header, struct soa_img &image, string path)
 }
 
 //------------------------------------------------------------------------
-//Método para gauss
-void gauss(struct bmpHeader &header, struct soa_img &image, struct soa_img &imageNew){
-	int  resB=0, resG=0, resR=0;
-	for(int i =0; i<(header.height); i++){
-		for(int j=0; j<(header.width); j++){
-			for(int s=-2; s<3; s++){
-				for(int t=-2;t<3; t++){
-					//Comprueba que no se sale de los limites 
-					if((i+s)>=0 && (i+s)<header.height && (j+t)>=0 && (j+t)<header.width){
-						resB+=GAUSS[s+2][t+2]*image.azul[(i+s)*header.width+(j+t)];
-						resG+=GAUSS[s+2][t+2]*image.verde[(i+s)*header.width+(j+t)];
-						resR+=GAUSS[s+2][t+2]*image.rojo[(i+s)*header.width+(j+t)];
-					}
-				}
-			}
-			//Guarda la suma/273
-            imageNew.azul.push_back(resB/273);
-            imageNew.verde.push_back(resG/273);
-            imageNew.rojo.push_back(resR/273);
-			resB=0;resG=0;resR=0;
-		}
-	}
+// Método para gauss
+void gauss(struct bmpHeader &header, struct soa_img &image, struct soa_img &imageNew)
+{
+    int resB = 0, resG = 0, resR = 0;
+    for (int i = 0; i < ((int)(header.height)); i++)
+    {
+        for (int j = 0; j < ((int)(header.width)); j++)
+        {
+            for (int s = -2; s < 3; s++)
+            {
+                for (int t = -2; t < 3; t++)
+                {
+                    // Comprueba que no se sale de los limites
+                    if ((i + s) >= 0 && (i + s) < (int)(header.height) && (j + t) >= 0 && (j + t) < (int)(header.width))
+                    {
+                        resB += GAUSS[s + 2][t + 2] * image.azul[(i + s) * (int)(header.width) + (j + t)];
+                        resG += GAUSS[s + 2][t + 2] * image.verde[(i + s) * (int)(header.width) + (j + t)];
+                        resR += GAUSS[s + 2][t + 2] * image.rojo[(i + s) * (int)(header.width) + (j + t)];
+                    }
+                }
+            }
+            // Guarda la suma/273
+            imageNew.azul.push_back(resB / 273);
+            imageNew.verde.push_back(resG / 273);
+            imageNew.rojo.push_back(resR / 273);
+            resB = 0;
+            resG = 0;
+            resR = 0;
+        }
+    }
 }
 
 //---------------------------------------------------
-void mono(struct bmpHeader &header, struct soa_img &image, struct soa_img &imageNew){
-    int counter;
-    int g;
-    for(int counter = 0; counter<(header.width*header.height); counter++){
-        //Paso 1
+void mono(struct bmpHeader &header, struct soa_img &image, struct soa_img &imageNew)
+{
+    for (int counter = 0; counter < ((int)(header.width) * (int)(header.height)); counter++)
+    {
+        // Paso 1
         double cg, cl;
-            
-        double azul=((double)image.azul[counter]/255);
-        double verde=((double)image.verde[counter]/255);
-        double rojo=((double)image.rojo[counter]/255);
-         //cout<<azul<<", "<<verde<<", "<<rojo<<endl;
-        //Paso 2
-        if (azul<=0.04045) azul/=12.92;
-        else azul= pow(((azul+0.055)/1.055),2.4);
 
-        if (verde<=0.04045) verde/=12.92;
-        else verde= pow(((verde+0.055)/1.055),2.4);
+        double azul = ((double)image.azul[counter] / 255);
+        double verde = ((double)image.verde[counter] / 255);
+        double rojo = ((double)image.rojo[counter] / 255);
+        // cout<<azul<<", "<<verde<<", "<<rojo<<endl;
+        // Paso 2
+        if (azul <= 0.04045)
+            azul /= 12.92;
+        else
+            azul = pow(((azul + 0.055) / 1.055), 2.4);
 
-        if (rojo<=0.04045) rojo/=12.92;
-        else rojo= pow(((rojo+0.055)/1.055),2.4);
+        if (verde <= 0.04045)
+            verde /= 12.92;
+        else
+            verde = pow(((verde + 0.055) / 1.055), 2.4);
 
-        //Paso 3
-        cl=(0.2126*rojo)+(0.7152*verde)+(0.0722*azul);
-            
-        //Paso 4 y 5
-        if (cl <= 0.0031308) cg=12.92*cl*255;
-        else cg=((1.055*(pow(cl,(1/2.4))))-0.055)*255;
-        //cout << cg<<endl;
+        if (rojo <= 0.04045)
+            rojo /= 12.92;
+        else
+            rojo = pow(((rojo + 0.055) / 1.055), 2.4);
+
+        // Paso 3
+        cl = (0.2126 * rojo) + (0.7152 * verde) + (0.0722 * azul);
+
+        // Paso 4 y 5
+        if (cl <= 0.0031308)
+            cg = 12.92 * cl * 255;
+        else
+            cg = ((1.055 * (pow(cl, (1 / 2.4)))) - 0.055) * 255;
+        // cout << cg<<endl;
         imageNew.azul.push_back(cg);
         imageNew.verde.push_back(cg);
         imageNew.rojo.push_back(cg);
-	}
+    }
+}
+
+auto histo(struct bmpHeader &header, struct soa_img &image, string path)
+{
+    ofstream outFile;
+    path = path.substr(0, path.length() - 4);
+    path += ".hst";
+    outFile.open(path, fstream::out);
+    outFile.seekp(0);
+    int rojo[256] = {}, verde[256] = {}, azul[256] = {};
+    for (int i = 0; i < ((int)(header.height) * (int)(header.width)); i++)
+    {
+        rojo[image.rojo[i]]++;
+        verde[image.verde[i]]++;
+        azul[image.azul[i]]++;
+    }
+
+    auto toperation = clk::now();
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 256; j++)
+        {
+            switch (i)
+            {
+            case 0:
+                outFile << rojo[j] << endl;
+                break;
+            case 1:
+                outFile << verde[j] << endl;
+                break;
+            case 2:
+                outFile << azul[j] << endl;
+                break;
+            }
+        }
+    }
+    outFile.close();
+    return toperation;
 }

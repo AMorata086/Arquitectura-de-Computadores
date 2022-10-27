@@ -11,9 +11,8 @@
 #include "../common/gethead.hpp"
 
 using namespace std;
-
+using namespace std::chrono;
 using clk = chrono::high_resolution_clock;
-
 
 //-------------------------------------
 int main(int argc, char *argv[])
@@ -32,7 +31,7 @@ int main(int argc, char *argv[])
     struct bmpHeader header;
     for (auto &entrada : filesystem::directory_iterator(argv[1]))
     {
-        cout << "Imagen: " << entrada.path() << endl;
+        auto tini = clk::now(); // Tiempo carga
 
         inFile.open(entrada.path(), ifstream::binary);
 
@@ -53,97 +52,67 @@ int main(int argc, char *argv[])
         }
 
         // APLICACION DE OPERACIONES
-
         struct soa_img data;
 
         inFile.close();
 
         string path = entrada.path();
 
-        cout << " File size: " << header.file_size << "\n Width: " << header.width << "\n Height: " << header.height << endl;
+        cout << " File: \"" << path << "\"";
 
         getDataSOA(header, data, path);
 
+        auto tload = clk::now(); // Tiempo carga
+        path = path.substr(((string)argv[1]).length());
+        string pathOut = argv[2] + path; // Path del fichero de salida
+
         struct soa_img newdata;
-        
+
         if (strcmp(argv[3], "gauss") == 0)
             gauss(header, data, newdata);
 
         if (strcmp(argv[3], "mono") == 0)
             mono(header, data, newdata);
 
-        path = path.substr(((string)argv[1]).length());
-        string pathOut = argv[2] + path; // Path del fichero de salida
+        auto toperation = clk::now(); // Tiempo carga
+
+        auto thisto = clk::now();
         // operacion copy
-        if(strcmp(argv[3], "copy") == 0)
-            writeDataSOA(header, data, pathOut);
-        else
-            writeDataSOA(header, newdata, pathOut);
+        if (strcmp(argv[3], "histo") == 0)
+            thisto = histo(header, data, pathOut);
 
+        if (strcmp(argv[3], "copy") == 0)
+            writeFileSOA(header, data, pathOut);
+        else if (strcmp(argv[3], "gauss") == 0 || strcmp(argv[3], "mono") == 0)
+            writeFileSOA(header, newdata, pathOut);
 
-        // auto tLoad = clk::now(); // Tiempo carga
-        // clk::time_point tCopy;
-        // clk::time_point tGauss;
-        // clk::time_point tHisto;
-        // clk::time_point tMono;
-
-        // if (strcmp(argv[3], "copy") != 0)
-        // {
-        //     gauss(data, newdata)cout << 'No es copy' << endl;
-        // }
-        // if (strcmp(argv[3], "gauss") != 0)
-        // {
-        //
-        // }
-        /* if (strcmp(argv[1], "copy") != 0)
-        { // Si hay que hacer gauss o sobel
-            gauss(newdata1, data);
-            tGauss = clk::now(); // Tiempo gauss
-            if (strcmp(argv[1], "sobel") == 0)
-            {
-                sobel(data, newdata); // En vez de crear otra matriz reutilizo la inicial
-                tSobel = clk::now();  // Tiempo sobel
-            }
-        }
-        outFile.seekp(0);          // Se posiciona al inicio
-        outFile.write(buffer, 54); // Escribe el buffer inicial
-        writeHeader();             // Le cambia los datos a los obligatorios(Ej: inicio datos: 54)
-        if (strcmp(argv[1], "gauss") == 0)
-            writeData(newdata); // Si es gauss escribe de la nueva
-        else
-            writeData(data); // Para sobel o copy los nuevos datos están en data
-        free(data);
-        free(newdata);
-        * /
-            outFile.close();
-
-        /*auto tFin = clk::now(); // Tiempo final
+        auto tstore = clk::now(); // Tiempo carga
 
         // CALCULO DE TIEMPOS
-        auto ttotal = duration_cast<microseconds>(tFin - tIni);
-        auto tcarga = duration_cast<microseconds>(tLoad - tIni);
+        auto ttotal = duration_cast<microseconds>(tstore - tini);
+        auto tcarga = duration_cast<microseconds>(tload - tini);
         duration<double> tescritura;
-        cout << "(time: " << ttotal.count() << ")" << endl;
-        cout << " Load time: " << tcarga.count() << endl;
+        cout << " (time: " << ttotal.count() << ")" << endl;
+        cout << "\tLoad time: " << tcarga.count() << endl;
 
-        if (strcmp(argv[1], "copy") != 0)
+        if (strcmp(argv[3], "copy") != 0)
         {
-            auto tG = duration_cast<microseconds>(tGauss - tLoad);
-            cout << " Gauss time: " << tG.count() << endl;
+            auto toper = duration_cast<microseconds>(toperation - tload);
+            if (strcmp(argv[3], "gauss") == 0)
+                cout << "\tGauss time: " << toper.count() << endl;
+            else if (strcmp(argv[3], "mono") == 0)
+                cout << "\tMono time: " << toper.count() << endl;
 
-            if (strcmp(argv[1], "sobel") == 0)
+            else if (strcmp(argv[3], "histo") == 0)
             {
-                auto tS = duration_cast<microseconds>(tSobel - tGauss);
-                cout << " Sobel time: " << tS.count() << endl;
-                tescritura = duration_cast<microseconds>(tFin - tSobel);
+                auto th = duration_cast<microseconds>(thisto - tload);
+                cout << "\tHisto time: " << th.count() << endl;
             }
-
-            else
-                tescritura = duration_cast<microseconds>(tFin - tGauss);
         }
+        if (strcmp(argv[3], "histo") == 0)
+            tescritura = duration_cast<microseconds>(tstore - thisto);
         else
-            tescritura = duration_cast<microseconds>(tFin - tLoad);
-        cout << " Store time: " << (int)(tescritura.count() * 1000000) << endl;*/
+            tescritura = duration_cast<microseconds>(tstore - toperation);
+        cout << "\tStore time: " << (int)(tescritura.count() * 1000000) << endl;
     }
-    
 }

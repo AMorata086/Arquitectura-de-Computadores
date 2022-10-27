@@ -6,7 +6,7 @@
 
 using namespace std;
 
-typedef struct bmpHeader;
+struct bmpHeader;
 
 int getHeader(char buffer[], string path, struct bmpHeader &header);
 int writeHeader(string path, struct bmpHeader &header);
