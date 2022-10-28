@@ -1,0 +1,34 @@
+Input path: ./input_dir
+Output path: ./output_dir
+ File: "./input_dir/plane.bmp" (time: 607961)
+	Load time: 111731
+	Gauss time: 365546
+	Store time: 130683
+ File: "./input_dir/pyramid.bmp" (time: 628748)
+	Load time: 136625
+	Gauss time: 361495
+	Store time: 130627
+ File: "./input_dir/snake.bmp" (time: 595898)
+	Load time: 104404
+	Gauss time: 360843
+	Store time: 130650
+ File: "./input_dir/car.bmp" (time: 594986)
+	Load time: 104308
+	Gauss time: 360724
+	Store time: 129953
+ File: "./input_dir/elephant.bmp" (time: 621765)
+	Load time: 130847
+	Gauss time: 360646
+	Store time: 130271
+ File: "./input_dir/balloon.bmp" (time: 51698)
+	Load time: 9649
+	Gauss time: 30285
+	Store time: 11763
+ File: "./input_dir/landscape.bmp" (time: 14946780)
+	Load time: 2665793
+	Gauss time: 9175967
+	Store time: 3105018
+ File: "./input_dir/amphora.bmp" (time: 664449)
+	Load time: 172826
+	Gauss time: 360366
+	Store time: 131256
