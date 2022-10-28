@@ -1,0 +1,96 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "image",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "aos::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-aos-Debug-0cf068db7cb62fdddbf1.json",
+					"name" : "aos",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "common::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-common-Debug-91a914224618c4a8a331.json",
+					"name" : "common",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "image-aos.o::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-image-aos.o-Debug-07c0bfce4ee952eaa498.json",
+					"name" : "image-aos.o",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "image-soa.o::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-image-soa.o-Debug-a79f05742e63e35a6550.json",
+					"name" : "image-soa.o",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "soa::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-soa-Debug-11e4ce21f59ee01c23df.json",
+					"name" : "soa",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/build",
+		"source" : "/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

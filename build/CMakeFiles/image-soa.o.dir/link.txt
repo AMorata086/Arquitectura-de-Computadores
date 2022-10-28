@@ -1,0 +1,1 @@
+/usr/bin/g++ -g "CMakeFiles/image-soa.o.dir/image-soa/imgsoa.cpp.o" -o image-soa.o  libcommon.a libsoa.a 

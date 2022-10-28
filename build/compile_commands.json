@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/build",
+  "command": "/usr/bin/g++  -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/common -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-aos -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-soa -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/aos -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/soa -g -Wall -Wextra -Werror -pedantic -pedantic-errors -std=gnu++20 -o CMakeFiles/common.dir/common/gethead.cpp.o -c /mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/common/gethead.cpp",
+  "file": "/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/common/gethead.cpp"
+},
+{
+  "directory": "/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/build",
+  "command": "/usr/bin/g++  -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/common -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-aos -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-soa -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/aos -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/soa -g -Wall -Wextra -Werror -pedantic -pedantic-errors -std=gnu++20 -o CMakeFiles/common.dir/common/progargs.cpp.o -c /mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/common/progargs.cpp",
+  "file": "/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/common/progargs.cpp"
+},
+{
+  "directory": "/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/build",
+  "command": "/usr/bin/g++  -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/common -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-aos -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-soa -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/aos -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/soa -g -Wall -Wextra -Werror -pedantic -pedantic-errors -std=gnu++20 -o CMakeFiles/aos.dir/aos/imageaos.cpp.o -c /mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/aos/imageaos.cpp",
+  "file": "/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/aos/imageaos.cpp"
+},
+{
+  "directory": "/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/build",
+  "command": "/usr/bin/g++  -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/common -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-aos -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-soa -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/aos -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/soa -g -Wall -Wextra -Werror -pedantic -pedantic-errors -std=gnu++20 -o CMakeFiles/soa.dir/soa/imagesoa.cpp.o -c /mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/soa/imagesoa.cpp",
+  "file": "/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/soa/imagesoa.cpp"
+},
+{
+  "directory": "/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/build",
+  "command": "/usr/bin/g++  -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/common -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-aos -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-soa -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/aos -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/soa -g -Wall -Wextra -Werror -pedantic -pedantic-errors -std=gnu++20 -o CMakeFiles/image-aos.o.dir/image-aos/imgaos.cpp.o -c /mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-aos/imgaos.cpp",
+  "file": "/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-aos/imgaos.cpp"
+},
+{
+  "directory": "/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/build",
+  "command": "/usr/bin/g++  -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/common -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-aos -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-soa -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/aos -I/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/soa -g -Wall -Wextra -Werror -pedantic -pedantic-errors -std=gnu++20 -o CMakeFiles/image-soa.o.dir/image-soa/imgsoa.cpp.o -c /mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-soa/imgsoa.cpp",
+  "file": "/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p1/image-soa/imgsoa.cpp"
+}
+]

@@ -1,0 +1,7 @@
+/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/build/CMakeFiles/common.dir
+/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/build/CMakeFiles/aos.dir
+/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/build/CMakeFiles/soa.dir
+/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/build/CMakeFiles/image-aos.o.dir
+/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/build/CMakeFiles/image-soa.o.dir
+/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/build/CMakeFiles/edit_cache.dir
+/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/build/CMakeFiles/rebuild_cache.dir

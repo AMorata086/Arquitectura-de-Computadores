@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int not3Args(int argc, char *argv[])
+int not3Args(int argc)
 {
     // Si faltan argumentos
     if (argc != 4)
@@ -16,7 +16,7 @@ int not3Args(int argc, char *argv[])
     return 0;
 }
 
-int wrongValue(int argc, char *argv[])
+int wrongValue(char *argv[])
 // Si elvalor del argumento es erroneo
 {
     if (strcmp(argv[3], "copy") != 0 && strcmp(argv[3], "histo") != 0 && strcmp(argv[3], "mono") != 0 && strcmp(argv[3], "gauss") != 0)
@@ -27,7 +27,7 @@ int wrongValue(int argc, char *argv[])
     return 0;
 }
 
-int checkInDir(int argc, char *argv[])
+int checkInDir(char *argv[])
 {
     DIR *dirIn = opendir(argv[1]);
     if (dirIn == NULL)
@@ -40,7 +40,7 @@ int checkInDir(int argc, char *argv[])
     return 0;
 }
 
-int checkoutDir(int argc, char *argv[])
+int checkoutDir(char *argv[])
 {
     DIR *dirOut = opendir(argv[2]);
     if (dirOut == NULL)
@@ -56,7 +56,7 @@ int checkoutDir(int argc, char *argv[])
 
 int argsCheck(int argc, char *argv[])
 {
-    if (not3Args(argc, argv) == -1 || wrongValue(argc, argv) == -1 || checkInDir(argc, argv) == -1 || checkoutDir(argc, argv) == -1)
+    if (not3Args(argc) == -1 || wrongValue(argv) == -1 || checkInDir(argv) == -1 || checkoutDir(argv) == -1)
     {
         cerr << "image in_path out_path oper\n\toperation:copy, histo, mono, gauss\n";
         return -1;

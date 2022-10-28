@@ -2,13 +2,13 @@
 #define _PROGARGS_H
 #include "progargs.cpp"
 
-int not3Args(int argc, char *argv[]);
+int not3Args(int argc);
 
-int wrongValue(int argc, char *argv[]);
+int wrongValue(char *argv[]);
 
-int checkInDir(int argc, char *argv[]);
+int checkInDir(char *argv[]);
 
-int checkoutDir(int argc, char *argv[]);
+int checkoutDir(char *argv[]);
 
 int argsCheck(int argc, char *argv[]);
 
