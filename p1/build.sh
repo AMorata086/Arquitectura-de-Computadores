@@ -6,4 +6,4 @@ g++ -std=c++20 -Wall image-aos/imgaos.cpp -o image-aos
 g++ -std=c++20 -Wall image-soa/imgsoa.cpp -o image-soa
 
 # Compilar con CMake
-# cmake .
+# cmake . -DCMAKE_BUILD_TYPE=Release
