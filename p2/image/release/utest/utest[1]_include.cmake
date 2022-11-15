@@ -1,0 +1,5 @@
+if(EXISTS "/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p2/image/release/utest/utest[1]_tests.cmake")
+  include("/mnt/h/almoh/Documents/GitHub/Arquitectura-de-Computadores/p2/image/release/utest/utest[1]_tests.cmake")
+else()
+  add_test(utest_NOT_BUILT utest_NOT_BUILT)
+endif()
