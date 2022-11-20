@@ -1,0 +1,2385 @@
+===================================
+<<STATIC>> SCHEDULING, <<1>> THREAD
+===================================
+img-aos <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          4.919,16 msec cpu-clock                 #    3,999 CPUs utilized          
+            11.075      context-switches          #    0,002 M/sec                  
+                15      cpu-migrations            #    0,003 K/sec                  
+               541      page-faults               #    0,110 K/sec                  
+     3.113.525.707      cycles                    #    0,633 GHz                    
+     4.846.058.710      instructions              #    1,56  insn per cycle         
+       717.517.114      branches                  #  145,862 M/sec                  
+         1.337.266      branch-misses             #    0,19% of all branches        
+
+       1,230135501 seconds time elapsed
+
+img-aos <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              4,05 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             10,22 Joules energy-pkg                                                  
+              3,03 Joules energy-ram                                                  
+
+       1,271115374 seconds time elapsed
+
+img-aos <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          1.014,49 msec cpu-clock                 #    3,979 CPUs utilized          
+               103      context-switches          #    0,102 K/sec                  
+                 7      cpu-migrations            #    0,007 K/sec                  
+               390      page-faults               #    0,384 K/sec                  
+       829.765.895      cycles                    #    0,818 GHz                    
+     1.669.159.610      instructions              #    2,01  insn per cycle         
+       278.433.035      branches                  #  274,457 M/sec                  
+            60.384      branch-misses             #    0,02% of all branches        
+
+       0,254967264 seconds time elapsed
+
+img-aos <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              1,24 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              2,60 Joules energy-pkg                                                  
+              0,64 Joules energy-ram                                                  
+
+       0,264688899 seconds time elapsed
+
+img-aos <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         24.576,81 msec cpu-clock                 #    4,000 CPUs utilized          
+             1.006      context-switches          #    0,041 K/sec                  
+                12      cpu-migrations            #    0,000 K/sec                  
+               773      page-faults               #    0,031 K/sec                  
+    19.665.485.060      cycles                    #    0,800 GHz                    
+    34.950.753.541      instructions              #    1,78  insn per cycle         
+     5.008.041.303      branches                  #  203,771 M/sec                  
+         3.414.886      branch-misses             #    0,07% of all branches        
+
+       6,144880420 seconds time elapsed
+
+img-aos <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             29,02 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             61,05 Joules energy-pkg                                                  
+             14,84 Joules energy-ram                                                  
+
+       6,153950168 seconds time elapsed
+
+img-soa <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          6.521,16 msec cpu-clock                 #    3,999 CPUs utilized          
+             1.054      context-switches          #    0,162 K/sec                  
+                16      cpu-migrations            #    0,002 K/sec                  
+             1.567      page-faults               #    0,240 K/sec                  
+     4.265.123.672      cycles                    #    0,654 GHz                    
+     7.243.691.912      instructions              #    1,70  insn per cycle         
+     1.060.924.533      branches                  #  162,690 M/sec                  
+           664.268      branch-misses             #    0,06% of all branches        
+
+       1,630608086 seconds time elapsed
+
+img-soa <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              4,03 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             10,16 Joules energy-pkg                                                  
+              2,90 Joules energy-ram                                                  
+
+       1,215469718 seconds time elapsed
+
+img-soa <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          2.442,24 msec cpu-clock                 #    3,996 CPUs utilized          
+               116      context-switches          #    0,047 K/sec                  
+                12      cpu-migrations            #    0,005 K/sec                  
+             1.925      page-faults               #    0,788 K/sec                  
+     2.037.798.302      cycles                    #    0,834 GHz                    
+     3.630.543.366      instructions              #    1,78  insn per cycle         
+       577.570.954      branches                  #  236,492 M/sec                  
+            78.830      branch-misses             #    0,01% of all branches        
+
+       0,611167629 seconds time elapsed
+
+img-soa <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,13 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              6,41 Joules energy-pkg                                                  
+              1,47 Joules energy-ram                                                  
+
+       0,611020529 seconds time elapsed
+
+img-soa <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         32.971,54 msec cpu-clock                 #    4,000 CPUs utilized          
+             1.120      context-switches          #    0,034 K/sec                  
+                 5      cpu-migrations            #    0,000 K/sec                  
+             2.821      page-faults               #    0,086 K/sec                  
+    26.793.180.797      cycles                    #    0,813 GHz                    
+    50.093.264.002      instructions              #    1,87  insn per cycle         
+     6.728.246.362      branches                  #  204,062 M/sec                  
+         3.551.004      branch-misses             #    0,05% of all branches        
+
+       8,243771442 seconds time elapsed
+
+img-soa <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             40,78 Joules energy-cores                                                
+              0,03 Joules energy-gpu                                                  
+             84,17 Joules energy-pkg                                                  
+             19,90 Joules energy-ram                                                  
+
+       8,243436645 seconds time elapsed
+
+====================================
+<<STATIC>> SCHEDULING, <<2>> THREADS
+====================================
+img-aos <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          3.723,77 msec cpu-clock                 #    3,995 CPUs utilized          
+               774      context-switches          #    0,208 K/sec                  
+                16      cpu-migrations            #    0,004 K/sec                  
+               400      page-faults               #    0,107 K/sec                  
+     2.890.075.651      cycles                    #    0,776 GHz                    
+     4.706.903.636      instructions              #    1,63  insn per cycle         
+       688.412.324      branches                  #  184,870 M/sec                  
+           565.632      branch-misses             #    0,08% of all branches        
+
+       0,932102680 seconds time elapsed
+
+img-aos <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,96 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              8,46 Joules energy-pkg                                                  
+              2,23 Joules energy-ram                                                  
+
+       0,937780173 seconds time elapsed
+
+img-aos <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+            829,03 msec cpu-clock                 #    3,975 CPUs utilized          
+               119      context-switches          #    0,144 K/sec                  
+                10      cpu-migrations            #    0,012 K/sec                  
+               903      page-faults               #    0,001 M/sec                  
+       926.186.231      cycles                    #    1,117 GHz                    
+     1.675.673.918      instructions              #    1,81  insn per cycle         
+       280.067.778      branches                  #  337,825 M/sec                  
+            67.270      branch-misses             #    0,02% of all branches        
+
+       0,208555934 seconds time elapsed
+
+img-aos <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              1,38 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              2,46 Joules energy-pkg                                                  
+              0,50 Joules energy-ram                                                  
+
+       0,207553130 seconds time elapsed
+
+img-aos <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         13.645,92 msec cpu-clock                 #    3,999 CPUs utilized          
+               910      context-switches          #    0,067 K/sec                  
+                17      cpu-migrations            #    0,001 K/sec                  
+               774      page-faults               #    0,057 K/sec                  
+    19.659.104.578      cycles                    #    1,441 GHz                    
+    34.951.019.484      instructions              #    1,78  insn per cycle         
+     5.008.292.266      branches                  #  367,017 M/sec                  
+         3.316.855      branch-misses             #    0,07% of all branches        
+
+       3,412405858 seconds time elapsed
+
+img-aos <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             28,70 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             46,26 Joules energy-pkg                                                  
+              8,23 Joules energy-ram                                                  
+
+       3,420779384 seconds time elapsed
+
+img-soa <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          5.450,39 msec cpu-clock                 #    3,998 CPUs utilized          
+               827      context-switches          #    0,152 K/sec                  
+                 9      cpu-migrations            #    0,002 K/sec                  
+             1.423      page-faults               #    0,261 K/sec                  
+     4.263.330.375      cycles                    #    0,782 GHz                    
+     7.239.221.913      instructions              #    1,70  insn per cycle         
+     1.060.447.477      branches                  #  194,564 M/sec                  
+           596.226      branch-misses             #    0,06% of all branches        
+
+       1,363264339 seconds time elapsed
+
+img-soa <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,99 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              8,59 Joules energy-pkg                                                  
+              2,23 Joules energy-ram                                                  
+
+       0,938089335 seconds time elapsed
+
+img-soa <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          2.238,44 msec cpu-clock                 #    3,989 CPUs utilized          
+               123      context-switches          #    0,055 K/sec                  
+                 9      cpu-migrations            #    0,004 K/sec                  
+             1.930      page-faults               #    0,862 K/sec                  
+     2.120.920.336      cycles                    #    0,947 GHz                    
+     3.633.854.175      instructions              #    1,71  insn per cycle         
+       578.507.888      branches                  #  258,442 M/sec                  
+            78.889      branch-misses             #    0,01% of all branches        
+
+       0,561110952 seconds time elapsed
+
+img-soa <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,18 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              6,16 Joules energy-pkg                                                  
+              1,36 Joules energy-ram                                                  
+
+       0,560799111 seconds time elapsed
+
+img-soa <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         18.737,21 msec cpu-clock                 #    3,999 CPUs utilized          
+             1.986      context-switches          #    0,106 K/sec                  
+                54      cpu-migrations            #    0,003 K/sec                  
+             3.334      page-faults               #    0,178 K/sec                  
+    26.888.096.544      cycles                    #    1,435 GHz                    
+    50.129.861.536      instructions              #    1,86  insn per cycle         
+     6.739.063.116      branches                  #  359,662 M/sec                  
+         3.494.748      branch-misses             #    0,05% of all branches        
+
+       4,685211769 seconds time elapsed
+
+img-soa <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             40,03 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             64,19 Joules energy-pkg                                                  
+             11,28 Joules energy-ram                                                  
+
+       4,683686869 seconds time elapsed
+
+====================================
+<<STATIC>> SCHEDULING, <<4>> THREADS
+====================================
+img-aos <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          3.199,57 msec cpu-clock                 #    3,997 CPUs utilized          
+               799      context-switches          #    0,250 K/sec                  
+                18      cpu-migrations            #    0,006 K/sec                  
+               413      page-faults               #    0,129 K/sec                  
+     2.930.390.845      cycles                    #    0,916 GHz                    
+     4.720.035.849      instructions              #    1,61  insn per cycle         
+       691.690.782      branches                  #  216,182 M/sec                  
+           648.611      branch-misses             #    0,09% of all branches        
+
+       0,800571949 seconds time elapsed
+
+img-aos <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,83 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,80 Joules energy-pkg                                                  
+              1,91 Joules energy-ram                                                  
+
+       0,802317183 seconds time elapsed
+
+img-aos <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+            733,81 msec cpu-clock                 #    3,971 CPUs utilized          
+               106      context-switches          #    0,144 K/sec                  
+                14      cpu-migrations            #    0,019 K/sec                  
+               396      page-faults               #    0,540 K/sec                  
+     1.088.380.973      cycles                    #    1,483 GHz                    
+     1.681.906.350      instructions              #    1,55  insn per cycle         
+       282.064.168      branches                  #  384,383 M/sec                  
+            57.849      branch-misses             #    0,02% of all branches        
+
+       0,184787459 seconds time elapsed
+
+img-aos <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              1,47 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              2,42 Joules energy-pkg                                                  
+              0,45 Joules energy-ram                                                  
+
+       0,185543326 seconds time elapsed
+
+img-aos <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          8.443,51 msec cpu-clock                 #    3,998 CPUs utilized          
+               892      context-switches          #    0,106 K/sec                  
+                17      cpu-migrations            #    0,002 K/sec                  
+               779      page-faults               #    0,092 K/sec                  
+    19.679.323.800      cycles                    #    2,331 GHz                    
+    34.957.916.633      instructions              #    1,78  insn per cycle         
+     5.010.469.589      branches                  #  593,411 M/sec                  
+         3.187.179      branch-misses             #    0,06% of all branches        
+
+       2,111854734 seconds time elapsed
+
+img-aos <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             25,81 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             36,27 Joules energy-pkg                                                  
+              5,10 Joules energy-ram                                                  
+
+       2,130526174 seconds time elapsed
+
+img-soa <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          4.847,80 msec cpu-clock                 #    3,997 CPUs utilized          
+               777      context-switches          #    0,160 K/sec                  
+                17      cpu-migrations            #    0,004 K/sec                  
+             1.945      page-faults               #    0,401 K/sec                  
+     4.266.872.293      cycles                    #    0,880 GHz                    
+     7.247.431.810      instructions              #    1,70  insn per cycle         
+     1.062.648.753      branches                  #  219,202 M/sec                  
+           593.645      branch-misses             #    0,06% of all branches        
+
+       1,212919411 seconds time elapsed
+
+img-soa <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,79 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,85 Joules energy-pkg                                                  
+              1,95 Joules energy-ram                                                  
+
+       0,816803262 seconds time elapsed
+
+img-soa <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          2.145,85 msec cpu-clock                 #    3,989 CPUs utilized          
+               131      context-switches          #    0,061 K/sec                  
+                18      cpu-migrations            #    0,008 K/sec                  
+             1.420      page-faults               #    0,662 K/sec                  
+     2.284.954.858      cycles                    #    1,065 GHz                    
+     3.640.923.829      instructions              #    1,59  insn per cycle         
+       580.695.627      branches                  #  270,613 M/sec                  
+            83.034      branch-misses             #    0,01% of all branches        
+
+       0,537979956 seconds time elapsed
+
+img-soa <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,24 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              6,08 Joules energy-pkg                                                  
+              1,30 Joules energy-ram                                                  
+
+       0,538691255 seconds time elapsed
+
+img-soa <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         11.907,35 msec cpu-clock                 #    3,998 CPUs utilized          
+               910      context-switches          #    0,076 K/sec                  
+                14      cpu-migrations            #    0,001 K/sec                  
+             3.338      page-faults               #    0,280 K/sec                  
+    26.762.547.170      cycles                    #    2,248 GHz                    
+    50.097.506.901      instructions              #    1,87  insn per cycle         
+     6.729.937.658      branches                  #  565,192 M/sec                  
+         3.206.212      branch-misses             #    0,05% of all branches        
+
+       2,978018778 seconds time elapsed
+
+img-soa <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             36,09 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             51,11 Joules energy-pkg                                                  
+              7,17 Joules energy-ram                                                  
+
+       2,979112212 seconds time elapsed
+
+====================================
+<<STATIC>> SCHEDULING, <<8>> THREADS
+====================================
+img-aos <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          3.287,57 msec cpu-clock                 #    3,994 CPUs utilized          
+               870      context-switches          #    0,265 K/sec                  
+                13      cpu-migrations            #    0,004 K/sec                  
+               414      page-faults               #    0,126 K/sec                  
+     2.960.409.380      cycles                    #    0,900 GHz                    
+     4.703.524.097      instructions              #    1,59  insn per cycle         
+       687.352.476      branches                  #  209,076 M/sec                  
+         1.821.859      branch-misses             #    0,27% of all branches        
+
+       0,823220268 seconds time elapsed
+
+img-aos <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,73 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,61 Joules energy-pkg                                                  
+              1,91 Joules energy-ram                                                  
+
+       0,806305314 seconds time elapsed
+
+img-aos <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+            740,75 msec cpu-clock                 #    3,968 CPUs utilized          
+               173      context-switches          #    0,234 K/sec                  
+                17      cpu-migrations            #    0,023 K/sec                  
+               404      page-faults               #    0,545 K/sec                  
+     1.082.722.571      cycles                    #    1,462 GHz                    
+     1.670.133.703      instructions              #    1,54  insn per cycle         
+       278.638.319      branches                  #  376,158 M/sec                  
+            72.802      branch-misses             #    0,03% of all branches        
+
+       0,186671299 seconds time elapsed
+
+img-aos <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              1,48 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              2,45 Joules energy-pkg                                                  
+              0,46 Joules energy-ram                                                  
+
+       0,188687929 seconds time elapsed
+
+img-aos <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          8.452,74 msec cpu-clock                 #    3,999 CPUs utilized          
+             1.372      context-switches          #    0,162 K/sec                  
+                22      cpu-migrations            #    0,003 K/sec                  
+             1.298      page-faults               #    0,154 K/sec                  
+    19.621.595.080      cycles                    #    2,321 GHz                    
+    34.947.741.100      instructions              #    1,78  insn per cycle         
+     5.007.409.831      branches                  #  592,401 M/sec                  
+         3.175.756      branch-misses             #    0,06% of all branches        
+
+       2,113699086 seconds time elapsed
+
+img-aos <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             25,96 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             36,88 Joules energy-pkg                                                  
+              5,07 Joules energy-ram                                                  
+
+       2,112929913 seconds time elapsed
+
+img-soa <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          4.849,27 msec cpu-clock                 #    3,998 CPUs utilized          
+               952      context-switches          #    0,196 K/sec                  
+                19      cpu-migrations            #    0,004 K/sec                  
+             1.436      page-faults               #    0,296 K/sec                  
+     4.247.625.948      cycles                    #    0,876 GHz                    
+     7.235.127.705      instructions              #    1,70  insn per cycle         
+     1.059.299.454      branches                  #  218,445 M/sec                  
+           587.116      branch-misses             #    0,06% of all branches        
+
+       1,212812114 seconds time elapsed
+
+img-soa <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,71 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,54 Joules energy-pkg                                                  
+              1,94 Joules energy-ram                                                  
+
+       0,808250033 seconds time elapsed
+
+img-soa <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          2.158,48 msec cpu-clock                 #    3,991 CPUs utilized          
+               190      context-switches          #    0,088 K/sec                  
+                22      cpu-migrations            #    0,010 K/sec                  
+             1.428      page-faults               #    0,662 K/sec                  
+     2.285.427.672      cycles                    #    1,059 GHz                    
+     3.629.948.309      instructions              #    1,59  insn per cycle         
+       577.498.494      branches                  #  267,548 M/sec                  
+            94.732      branch-misses             #    0,02% of all branches        
+
+       0,540836789 seconds time elapsed
+
+img-soa <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,26 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              6,12 Joules energy-pkg                                                  
+              1,31 Joules energy-ram                                                  
+
+       0,542470889 seconds time elapsed
+
+img-soa <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         11.909,54 msec cpu-clock                 #    3,999 CPUs utilized          
+             1.594      context-switches          #    0,134 K/sec                  
+                26      cpu-migrations            #    0,002 K/sec                  
+             2.836      page-faults               #    0,238 K/sec                  
+    26.749.105.245      cycles                    #    2,246 GHz                    
+    50.090.308.705      instructions              #    1,87  insn per cycle         
+     6.727.648.383      branches                  #  564,896 M/sec                  
+         3.309.961      branch-misses             #    0,05% of all branches        
+
+       2,977904484 seconds time elapsed
+
+img-soa <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             36,08 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             51,08 Joules energy-pkg                                                  
+              7,16 Joules energy-ram                                                  
+
+       2,978522915 seconds time elapsed
+
+=====================================
+<<STATIC>> SCHEDULING, <<16>> THREADS
+=====================================
+img-aos <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          3.277,55 msec cpu-clock                 #    3,994 CPUs utilized          
+             1.407      context-switches          #    0,429 K/sec                  
+                48      cpu-migrations            #    0,015 K/sec                  
+               495      page-faults               #    0,151 K/sec                  
+     2.960.327.246      cycles                    #    0,903 GHz                    
+     4.770.987.100      instructions              #    1,61  insn per cycle         
+       697.108.482      branches                  #  212,692 M/sec                  
+           776.066      branch-misses             #    0,11% of all branches        
+
+       0,820598225 seconds time elapsed
+
+img-aos <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,82 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,72 Joules energy-pkg                                                  
+              1,93 Joules energy-ram                                                  
+
+       0,810873160 seconds time elapsed
+
+img-aos <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+            765,58 msec cpu-clock                 #    3,973 CPUs utilized          
+               240      context-switches          #    0,313 K/sec                  
+                31      cpu-migrations            #    0,040 K/sec                  
+               421      page-faults               #    0,550 K/sec                  
+     1.108.722.084      cycles                    #    1,448 GHz                    
+     1.671.199.244      instructions              #    1,51  insn per cycle         
+       278.861.998      branches                  #  364,250 M/sec                  
+            79.818      branch-misses             #    0,03% of all branches        
+
+       0,192717980 seconds time elapsed
+
+img-aos <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              1,50 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              2,51 Joules energy-pkg                                                  
+              0,47 Joules energy-ram                                                  
+
+       0,193534935 seconds time elapsed
+
+img-aos <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          8.488,81 msec cpu-clock                 #    3,998 CPUs utilized          
+             1.705      context-switches          #    0,201 K/sec                  
+                39      cpu-migrations            #    0,005 K/sec                  
+               840      page-faults               #    0,099 K/sec                  
+    19.623.348.699      cycles                    #    2,312 GHz                    
+    34.949.177.073      instructions              #    1,78  insn per cycle         
+     5.007.882.387      branches                  #  589,940 M/sec                  
+         3.205.467      branch-misses             #    0,06% of all branches        
+
+       2,123306404 seconds time elapsed
+
+img-aos <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             25,82 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             36,24 Joules energy-pkg                                                  
+              5,09 Joules energy-ram                                                  
+
+       2,114843699 seconds time elapsed
+
+img-soa <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          4.868,67 msec cpu-clock                 #    3,998 CPUs utilized          
+             1.112      context-switches          #    0,228 K/sec                  
+                31      cpu-migrations            #    0,006 K/sec                  
+             1.459      page-faults               #    0,300 K/sec                  
+     4.254.766.909      cycles                    #    0,874 GHz                    
+     7.238.607.511      instructions              #    1,70  insn per cycle         
+     1.060.158.270      branches                  #  217,751 M/sec                  
+           622.727      branch-misses             #    0,06% of all branches        
+
+       1,217733749 seconds time elapsed
+
+img-soa <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,78 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,59 Joules energy-pkg                                                  
+              1,91 Joules energy-ram                                                  
+
+       0,802940683 seconds time elapsed
+
+img-soa <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          2.177,85 msec cpu-clock                 #    3,998 CPUs utilized          
+               263      context-switches          #    0,121 K/sec                  
+                39      cpu-migrations            #    0,018 K/sec                  
+             1.596      page-faults               #    0,733 K/sec                  
+     2.312.657.207      cycles                    #    1,062 GHz                    
+     3.635.561.497      instructions              #    1,57  insn per cycle         
+       578.533.793      branches                  #  265,644 M/sec                  
+           130.408      branch-misses             #    0,02% of all branches        
+
+       0,544704454 seconds time elapsed
+
+img-soa <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,29 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              6,18 Joules energy-pkg                                                  
+              1,32 Joules energy-ram                                                  
+
+       0,543494455 seconds time elapsed
+
+img-soa <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         11.921,37 msec cpu-clock                 #    3,998 CPUs utilized          
+             1.990      context-switches          #    0,167 K/sec                  
+                48      cpu-migrations            #    0,004 K/sec                  
+             2.854      page-faults               #    0,239 K/sec                  
+    27.250.152.685      cycles                    #    2,286 GHz                    
+    51.065.601.866      instructions              #    1,87  insn per cycle         
+     6.974.465.731      branches                  #  585,039 M/sec                  
+         7.016.526      branch-misses             #    0,10% of all branches        
+
+       2,981519267 seconds time elapsed
+
+img-soa <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             36,00 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             50,85 Joules energy-pkg                                                  
+              7,19 Joules energy-ram                                                  
+
+       2,989173165 seconds time elapsed
+
+====================================
+<<DYNAMIC>> SCHEDULING, <<1>> THREAD
+====================================
+img-aos <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          4.811,56 msec cpu-clock                 #    3,997 CPUs utilized          
+               877      context-switches          #    0,182 K/sec                  
+                11      cpu-migrations            #    0,002 K/sec                  
+               395      page-faults               #    0,082 K/sec                  
+     2.859.202.787      cycles                    #    0,594 GHz                    
+     4.702.522.867      instructions              #    1,64  insn per cycle         
+       687.203.376      branches                  #  142,824 M/sec                  
+           580.236      branch-misses             #    0,08% of all branches        
+
+       1,203894481 seconds time elapsed
+
+img-aos <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,95 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              9,85 Joules energy-pkg                                                  
+              2,89 Joules energy-ram                                                  
+
+       1,210291215 seconds time elapsed
+
+img-aos <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          1.016,85 msec cpu-clock                 #    3,983 CPUs utilized          
+                90      context-switches          #    0,089 K/sec                  
+                 6      cpu-migrations            #    0,006 K/sec                  
+               390      page-faults               #    0,384 K/sec                  
+       830.458.338      cycles                    #    0,817 GHz                    
+     1.669.263.664      instructions              #    2,01  insn per cycle         
+       278.453.675      branches                  #  273,841 M/sec                  
+            61.382      branch-misses             #    0,02% of all branches        
+
+       0,255265097 seconds time elapsed
+
+img-aos <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              1,30 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              2,65 Joules energy-pkg                                                  
+              0,62 Joules energy-ram                                                  
+
+       0,254880086 seconds time elapsed
+
+img-aos <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         24.583,72 msec cpu-clock                 #    3,999 CPUs utilized          
+             1.263      context-switches          #    0,051 K/sec                  
+                21      cpu-migrations            #    0,001 K/sec                  
+               773      page-faults               #    0,031 K/sec                  
+    19.704.553.460      cycles                    #    0,802 GHz                    
+    34.966.593.526      instructions              #    1,77  insn per cycle         
+     5.013.144.838      branches                  #  203,921 M/sec                  
+         3.501.822      branch-misses             #    0,07% of all branches        
+
+       6,147202886 seconds time elapsed
+
+img-aos <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             29,29 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             61,43 Joules energy-pkg                                                  
+             14,85 Joules energy-ram                                                  
+
+       6,158067983 seconds time elapsed
+
+img-soa <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          6.463,96 msec cpu-clock                 #    3,997 CPUs utilized          
+               831      context-switches          #    0,129 K/sec                  
+                11      cpu-migrations            #    0,002 K/sec                  
+             1.420      page-faults               #    0,220 K/sec                  
+     4.274.196.425      cycles                    #    0,661 GHz                    
+     7.234.987.368      instructions              #    1,69  insn per cycle         
+     1.059.218.882      branches                  #  163,865 M/sec                  
+           677.699      branch-misses             #    0,06% of all branches        
+
+       1,617147296 seconds time elapsed
+
+img-soa <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              4,05 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             10,22 Joules energy-pkg                                                  
+              2,91 Joules energy-ram                                                  
+
+       1,216997462 seconds time elapsed
+
+img-soa <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          2.435,24 msec cpu-clock                 #    3,994 CPUs utilized          
+               125      context-switches          #    0,051 K/sec                  
+                10      cpu-migrations            #    0,004 K/sec                  
+             1.414      page-faults               #    0,581 K/sec                  
+     2.036.807.060      cycles                    #    0,836 GHz                    
+     3.628.930.563      instructions              #    1,78  insn per cycle         
+       577.278.265      branches                  #  237,052 M/sec                  
+            85.638      branch-misses             #    0,01% of all branches        
+
+       0,609705842 seconds time elapsed
+
+img-soa <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,09 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              6,33 Joules energy-pkg                                                  
+              1,47 Joules energy-ram                                                  
+
+       0,610010557 seconds time elapsed
+
+img-soa <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         33.005,56 msec cpu-clock                 #    4,000 CPUs utilized          
+             1.097      context-switches          #    0,033 K/sec                  
+                11      cpu-migrations            #    0,000 K/sec                  
+             3.331      page-faults               #    0,101 K/sec                  
+    26.823.769.237      cycles                    #    0,813 GHz                    
+    50.095.565.487      instructions              #    1,87  insn per cycle         
+     6.728.690.409      branches                  #  203,865 M/sec                  
+         3.533.800      branch-misses             #    0,05% of all branches        
+
+       8,251902880 seconds time elapsed
+
+img-soa <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             40,84 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             84,18 Joules energy-pkg                                                  
+             19,90 Joules energy-ram                                                  
+
+       8,248573272 seconds time elapsed
+
+=====================================
+<<DYNAMIC>> SCHEDULING, <<2>> THREADS
+=====================================
+img-aos <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          3.722,54 msec cpu-clock                 #    3,994 CPUs utilized          
+               778      context-switches          #    0,209 K/sec                  
+                 9      cpu-migrations            #    0,002 K/sec                  
+               911      page-faults               #    0,245 K/sec                  
+     2.884.767.385      cycles                    #    0,775 GHz                    
+     4.709.613.657      instructions              #    1,63  insn per cycle         
+       689.016.644      branches                  #  185,093 M/sec                  
+           580.727      branch-misses             #    0,08% of all branches        
+
+       0,931979558 seconds time elapsed
+
+img-aos <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,99 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              8,39 Joules energy-pkg                                                  
+              2,22 Joules energy-ram                                                  
+
+       0,930021837 seconds time elapsed
+
+img-aos <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+            846,75 msec cpu-clock                 #    3,977 CPUs utilized          
+               123      context-switches          #    0,145 K/sec                  
+                 6      cpu-migrations            #    0,007 K/sec                  
+               905      page-faults               #    0,001 M/sec                  
+       941.041.109      cycles                    #    1,111 GHz                    
+     1.675.554.124      instructions              #    1,78  insn per cycle         
+       280.033.112      branches                  #  330,717 M/sec                  
+            74.728      branch-misses             #    0,03% of all branches        
+
+       0,212919516 seconds time elapsed
+
+img-aos <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              1,38 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              2,47 Joules energy-pkg                                                  
+              0,50 Joules energy-ram                                                  
+
+       0,208731743 seconds time elapsed
+
+img-aos <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         13.657,67 msec cpu-clock                 #    4,000 CPUs utilized          
+               946      context-switches          #    0,069 K/sec                  
+                15      cpu-migrations            #    0,001 K/sec                  
+             1.432      page-faults               #    0,105 K/sec                  
+    19.667.588.129      cycles                    #    1,440 GHz                    
+    34.957.816.783      instructions              #    1,78  insn per cycle         
+     5.009.557.132      branches                  #  366,794 M/sec                  
+         3.354.406      branch-misses             #    0,07% of all branches        
+
+       3,414704807 seconds time elapsed
+
+img-aos <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             28,80 Joules energy-cores                                                
+              0,03 Joules energy-gpu                                                  
+             46,46 Joules energy-pkg                                                  
+              8,24 Joules energy-ram                                                  
+
+       3,420700743 seconds time elapsed
+
+img-soa <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          5.524,02 msec cpu-clock                 #    3,998 CPUs utilized          
+               768      context-switches          #    0,139 K/sec                  
+                11      cpu-migrations            #    0,002 K/sec                  
+             1.423      page-faults               #    0,258 K/sec                  
+     4.248.372.173      cycles                    #    0,769 GHz                    
+     7.241.204.777      instructions              #    1,70  insn per cycle         
+     1.061.505.680      branches                  #  192,162 M/sec                  
+           609.008      branch-misses             #    0,06% of all branches        
+
+       1,381634694 seconds time elapsed
+
+img-soa <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,94 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              9,59 Joules energy-pkg                                                  
+              3,08 Joules energy-ram                                                  
+
+       1,430754537 seconds time elapsed
+
+img-soa <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          2.244,77 msec cpu-clock                 #    3,993 CPUs utilized          
+               118      context-switches          #    0,053 K/sec                  
+                12      cpu-migrations            #    0,005 K/sec                  
+             1.927      page-faults               #    0,858 K/sec                  
+     2.126.775.034      cycles                    #    0,947 GHz                    
+     3.634.356.616      instructions              #    1,71  insn per cycle         
+       578.643.039      branches                  #  257,774 M/sec                  
+            95.423      branch-misses             #    0,02% of all branches        
+
+       0,562224308 seconds time elapsed
+
+img-soa <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,17 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              6,15 Joules energy-pkg                                                  
+              1,36 Joules energy-ram                                                  
+
+       0,561599430 seconds time elapsed
+
+img-soa <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         18.723,39 msec cpu-clock                 #    3,999 CPUs utilized          
+               861      context-switches          #    0,046 K/sec                  
+                16      cpu-migrations            #    0,001 K/sec                  
+             2.884      page-faults               #    0,154 K/sec                  
+    26.810.182.291      cycles                    #    1,432 GHz                    
+    50.096.367.599      instructions              #    1,87  insn per cycle         
+     6.729.235.613      branches                  #  359,403 M/sec                  
+         3.671.241      branch-misses             #    0,05% of all branches        
+
+       4,681702097 seconds time elapsed
+
+img-soa <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             40,16 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             64,21 Joules energy-pkg                                                  
+             11,29 Joules energy-ram                                                  
+
+       4,683281607 seconds time elapsed
+
+=====================================
+<<DYNAMIC>> SCHEDULING, <<4>> THREADS
+=====================================
+img-aos <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          3.196,07 msec cpu-clock                 #    3,993 CPUs utilized          
+               817      context-switches          #    0,256 K/sec                  
+                17      cpu-migrations            #    0,005 K/sec                  
+               411      page-faults               #    0,129 K/sec                  
+     2.900.664.319      cycles                    #    0,908 GHz                    
+     4.713.032.623      instructions              #    1,62  insn per cycle         
+       690.261.027      branches                  #  215,972 M/sec                  
+           579.957      branch-misses             #    0,08% of all branches        
+
+       0,800327541 seconds time elapsed
+
+img-aos <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,71 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,47 Joules energy-pkg                                                  
+              1,92 Joules energy-ram                                                  
+
+       0,807081725 seconds time elapsed
+
+img-aos <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+            742,73 msec cpu-clock                 #    3,987 CPUs utilized          
+               106      context-switches          #    0,143 K/sec                  
+                14      cpu-migrations            #    0,019 K/sec                  
+               907      page-faults               #    0,001 M/sec                  
+     1.093.903.460      cycles                    #    1,473 GHz                    
+     1.683.172.552      instructions              #    1,54  insn per cycle         
+       282.229.423      branches                  #  379,987 M/sec                  
+            60.090      branch-misses             #    0,02% of all branches        
+
+       0,186302839 seconds time elapsed
+
+img-aos <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              1,47 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              2,42 Joules energy-pkg                                                  
+              0,45 Joules energy-ram                                                  
+
+       0,185730666 seconds time elapsed
+
+img-aos <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          8.446,20 msec cpu-clock                 #    3,998 CPUs utilized          
+               939      context-switches          #    0,111 K/sec                  
+                20      cpu-migrations            #    0,002 K/sec                  
+               781      page-faults               #    0,092 K/sec                  
+    19.640.828.253      cycles                    #    2,325 GHz                    
+    34.956.803.117      instructions              #    1,78  insn per cycle         
+     5.010.175.728      branches                  #  593,187 M/sec                  
+         3.182.520      branch-misses             #    0,06% of all branches        
+
+       2,112538410 seconds time elapsed
+
+img-aos <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             25,84 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             36,45 Joules energy-pkg                                                  
+              5,10 Joules energy-ram                                                  
+
+       2,122968274 seconds time elapsed
+
+img-soa <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          4.848,28 msec cpu-clock                 #    3,995 CPUs utilized          
+               761      context-switches          #    0,157 K/sec                  
+                19      cpu-migrations            #    0,004 K/sec                  
+             1.436      page-faults               #    0,296 K/sec                  
+     4.278.720.859      cycles                    #    0,883 GHz                    
+     7.243.405.924      instructions              #    1,69  insn per cycle         
+     1.061.710.160      branches                  #  218,987 M/sec                  
+           589.550      branch-misses             #    0,06% of all branches        
+
+       1,213684424 seconds time elapsed
+
+img-soa <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,81 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,67 Joules energy-pkg                                                  
+              1,89 Joules energy-ram                                                  
+
+       0,800812093 seconds time elapsed
+
+img-soa <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          2.151,51 msec cpu-clock                 #    3,989 CPUs utilized          
+               119      context-switches          #    0,055 K/sec                  
+                18      cpu-migrations            #    0,008 K/sec                  
+             1.421      page-faults               #    0,660 K/sec                  
+     2.284.831.706      cycles                    #    1,062 GHz                    
+     3.641.376.820      instructions              #    1,59  insn per cycle         
+       580.821.499      branches                  #  269,960 M/sec                  
+            84.190      branch-misses             #    0,01% of all branches        
+
+       0,539381886 seconds time elapsed
+
+img-soa <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,26 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              6,14 Joules energy-pkg                                                  
+              1,31 Joules energy-ram                                                  
+
+       0,542452874 seconds time elapsed
+
+img-soa <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         11.910,85 msec cpu-clock                 #    3,998 CPUs utilized          
+               911      context-switches          #    0,076 K/sec                  
+                10      cpu-migrations            #    0,001 K/sec                  
+             3.337      page-faults               #    0,280 K/sec                  
+    26.754.129.590      cycles                    #    2,246 GHz                    
+    50.096.735.501      instructions              #    1,87  insn per cycle         
+     6.729.767.160      branches                  #  565,012 M/sec                  
+         3.305.017      branch-misses             #    0,05% of all branches        
+
+       2,979048657 seconds time elapsed
+
+img-soa <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             36,26 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             51,31 Joules energy-pkg                                                  
+              7,18 Joules energy-ram                                                  
+
+       2,983769988 seconds time elapsed
+
+=====================================
+<<DYNAMIC>> SCHEDULING, <<8>> THREADS
+=====================================
+img-aos <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          3.189,70 msec cpu-clock                 #    3,995 CPUs utilized          
+               966      context-switches          #    0,303 K/sec                  
+                14      cpu-migrations            #    0,004 K/sec                  
+               412      page-faults               #    0,129 K/sec                  
+     2.871.912.175      cycles                    #    0,900 GHz                    
+     4.702.842.796      instructions              #    1,64  insn per cycle         
+       687.275.671      branches                  #  215,467 M/sec                  
+           570.516      branch-misses             #    0,08% of all branches        
+
+       0,798446944 seconds time elapsed
+
+img-aos <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,75 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,53 Joules energy-pkg                                                  
+              1,89 Joules energy-ram                                                  
+
+       0,797905625 seconds time elapsed
+
+img-aos <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+            756,85 msec cpu-clock                 #    3,995 CPUs utilized          
+               179      context-switches          #    0,237 K/sec                  
+                15      cpu-migrations            #    0,020 K/sec                  
+             1.063      page-faults               #    0,001 M/sec                  
+     1.103.638.201      cycles                    #    1,458 GHz                    
+     1.676.755.559      instructions              #    1,52  insn per cycle         
+       279.835.167      branches                  #  369,739 M/sec                  
+            98.445      branch-misses             #    0,04% of all branches        
+
+       0,189465213 seconds time elapsed
+
+img-aos <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              1,48 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              2,45 Joules energy-pkg                                                  
+              0,45 Joules energy-ram                                                  
+
+       0,186815594 seconds time elapsed
+
+img-aos <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          8.454,81 msec cpu-clock                 #    3,998 CPUs utilized          
+             1.368      context-switches          #    0,162 K/sec                  
+                19      cpu-migrations            #    0,002 K/sec                  
+             1.297      page-faults               #    0,153 K/sec                  
+    19.627.091.889      cycles                    #    2,321 GHz                    
+    34.948.245.969      instructions              #    1,78  insn per cycle         
+     5.007.545.086      branches                  #  592,272 M/sec                  
+         3.188.622      branch-misses             #    0,06% of all branches        
+
+       2,114938294 seconds time elapsed
+
+img-aos <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             25,84 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             36,37 Joules energy-pkg                                                  
+              5,07 Joules energy-ram                                                  
+
+       2,120399365 seconds time elapsed
+
+img-soa <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          4.843,10 msec cpu-clock                 #    3,995 CPUs utilized          
+               874      context-switches          #    0,180 K/sec                  
+                14      cpu-migrations            #    0,003 K/sec                  
+             1.434      page-faults               #    0,296 K/sec                  
+     4.244.743.501      cycles                    #    0,876 GHz                    
+     7.235.974.658      instructions              #    1,70  insn per cycle         
+     1.059.540.812      branches                  #  218,773 M/sec                  
+           596.419      branch-misses             #    0,06% of all branches        
+
+       1,212261030 seconds time elapsed
+
+img-soa <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,69 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,41 Joules energy-pkg                                                  
+              1,92 Joules energy-ram                                                  
+
+       0,807278053 seconds time elapsed
+
+img-soa <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          2.157,19 msec cpu-clock                 #    3,991 CPUs utilized          
+               188      context-switches          #    0,087 K/sec                  
+                11      cpu-migrations            #    0,005 K/sec                  
+             1.428      page-faults               #    0,662 K/sec                  
+     2.286.457.276      cycles                    #    1,060 GHz                    
+     3.629.458.608      instructions              #    1,59  insn per cycle         
+       577.393.607      branches                  #  267,660 M/sec                  
+            84.827      branch-misses             #    0,01% of all branches        
+
+       0,540503903 seconds time elapsed
+
+img-soa <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,25 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              6,12 Joules energy-pkg                                                  
+              1,32 Joules energy-ram                                                  
+
+       0,544074482 seconds time elapsed
+
+img-soa <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         11.959,28 msec cpu-clock                 #    3,999 CPUs utilized          
+             1.537      context-switches          #    0,129 K/sec                  
+                17      cpu-migrations            #    0,001 K/sec                  
+             2.834      page-faults               #    0,237 K/sec                  
+    26.921.482.024      cycles                    #    2,251 GHz                    
+    50.087.358.327      instructions              #    1,86  insn per cycle         
+     6.727.044.180      branches                  #  562,496 M/sec                  
+         3.231.052      branch-misses             #    0,05% of all branches        
+
+       2,990643596 seconds time elapsed
+
+img-soa <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             36,20 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             51,21 Joules energy-pkg                                                  
+              7,16 Joules energy-ram                                                  
+
+       2,976649588 seconds time elapsed
+
+======================================
+<<DYNAMIC>> SCHEDULING, <<16>> THREADS
+======================================
+img-aos <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          3.279,80 msec cpu-clock                 #    3,993 CPUs utilized          
+               981      context-switches          #    0,299 K/sec                  
+                31      cpu-migrations            #    0,009 K/sec                  
+               940      page-faults               #    0,287 K/sec                  
+     2.930.918.007      cycles                    #    0,894 GHz                    
+     4.706.494.202      instructions              #    1,61  insn per cycle         
+       687.981.625      branches                  #  209,763 M/sec                  
+           581.401      branch-misses             #    0,08% of all branches        
+
+       0,821413933 seconds time elapsed
+
+img-aos <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,76 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,44 Joules energy-pkg                                                  
+              1,88 Joules energy-ram                                                  
+
+       0,801100405 seconds time elapsed
+
+img-aos <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+            751,95 msec cpu-clock                 #    3,974 CPUs utilized          
+               225      context-switches          #    0,299 K/sec                  
+                37      cpu-migrations            #    0,049 K/sec                  
+               421      page-faults               #    0,560 K/sec                  
+     1.110.278.039      cycles                    #    1,477 GHz                    
+     1.670.901.895      instructions              #    1,50  insn per cycle         
+       278.799.902      branches                  #  370,771 M/sec                  
+            74.442      branch-misses             #    0,03% of all branches        
+
+       0,189218574 seconds time elapsed
+
+img-aos <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              1,49 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              2,48 Joules energy-pkg                                                  
+              0,46 Joules energy-ram                                                  
+
+       0,190244812 seconds time elapsed
+
+img-aos <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          8.517,15 msec cpu-clock                 #    3,998 CPUs utilized          
+             1.688      context-switches          #    0,198 K/sec                  
+                42      cpu-migrations            #    0,005 K/sec                  
+             1.315      page-faults               #    0,154 K/sec                  
+    19.632.033.977      cycles                    #    2,305 GHz                    
+    34.949.244.095      instructions              #    1,78  insn per cycle         
+     5.007.717.564      branches                  #  587,957 M/sec                  
+         3.216.960      branch-misses             #    0,06% of all branches        
+
+       2,130168396 seconds time elapsed
+
+img-aos <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             25,86 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             36,33 Joules energy-pkg                                                  
+              5,11 Joules energy-ram                                                  
+
+       2,125857008 seconds time elapsed
+
+img-soa <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          4.860,92 msec cpu-clock                 #    3,996 CPUs utilized          
+               965      context-switches          #    0,199 K/sec                  
+                36      cpu-migrations            #    0,007 K/sec                  
+             1.453      page-faults               #    0,299 K/sec                  
+     4.247.375.510      cycles                    #    0,874 GHz                    
+     7.236.650.417      instructions              #    1,70  insn per cycle         
+     1.059.735.800      branches                  #  218,011 M/sec                  
+           602.987      branch-misses             #    0,06% of all branches        
+
+       1,216464906 seconds time elapsed
+
+img-soa <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,76 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,50 Joules energy-pkg                                                  
+              1,94 Joules energy-ram                                                  
+
+       0,812209651 seconds time elapsed
+
+img-soa <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          2.177,41 msec cpu-clock                 #    3,996 CPUs utilized          
+               257      context-switches          #    0,118 K/sec                  
+                31      cpu-migrations            #    0,014 K/sec                  
+             1.445      page-faults               #    0,664 K/sec                  
+     2.291.763.285      cycles                    #    1,053 GHz                    
+     3.630.739.826      instructions              #    1,58  insn per cycle         
+       577.662.955      branches                  #  265,298 M/sec                  
+           102.903      branch-misses             #    0,02% of all branches        
+
+       0,544931369 seconds time elapsed
+
+img-soa <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,28 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              6,17 Joules energy-pkg                                                  
+              1,32 Joules energy-ram                                                  
+
+       0,544020665 seconds time elapsed
+
+img-soa <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         11.723,10 msec cpu-clock                 #    3,999 CPUs utilized          
+             2.039      context-switches          #    0,174 K/sec                  
+                33      cpu-migrations            #    0,003 K/sec                  
+             3.420      page-faults               #    0,292 K/sec                  
+    26.775.940.634      cycles                    #    2,284 GHz                    
+    50.139.769.955      instructions              #    1,87  insn per cycle         
+     6.733.252.325      branches                  #  574,358 M/sec                  
+         3.370.649      branch-misses             #    0,05% of all branches        
+
+       2,931611097 seconds time elapsed
+
+img-soa <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             36,29 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             51,23 Joules energy-pkg                                                  
+              7,17 Joules energy-ram                                                  
+
+       2,980079900 seconds time elapsed
+
+===================================
+<<GUIDED>> SCHEDULING, <<1>> THREAD
+===================================
+img-aos <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          4.818,50 msec cpu-clock                 #    3,999 CPUs utilized          
+               801      context-switches          #    0,166 K/sec                  
+                 6      cpu-migrations            #    0,001 K/sec                  
+               544      page-faults               #    0,113 K/sec                  
+     2.859.341.895      cycles                    #    0,593 GHz                    
+     4.707.619.785      instructions              #    1,65  insn per cycle         
+       688.155.122      branches                  #  142,815 M/sec                  
+           607.287      branch-misses             #    0,09% of all branches        
+
+       1,204983610 seconds time elapsed
+
+img-aos <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              4,12 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             10,18 Joules energy-pkg                                                  
+              2,90 Joules energy-ram                                                  
+
+       1,215694185 seconds time elapsed
+
+img-aos <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          1.019,41 msec cpu-clock                 #    3,977 CPUs utilized          
+                93      context-switches          #    0,091 K/sec                  
+                 5      cpu-migrations            #    0,005 K/sec                  
+               390      page-faults               #    0,383 K/sec                  
+       832.614.230      cycles                    #    0,817 GHz                    
+     1.669.182.378      instructions              #    2,00  insn per cycle         
+       278.437.850      branches                  #  273,137 M/sec                  
+            61.224      branch-misses             #    0,02% of all branches        
+
+       0,256340627 seconds time elapsed
+
+img-aos <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              1,30 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              2,66 Joules energy-pkg                                                  
+              0,62 Joules energy-ram                                                  
+
+       0,256113403 seconds time elapsed
+
+img-aos <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         24.584,40 msec cpu-clock                 #    3,999 CPUs utilized          
+             1.005      context-switches          #    0,041 K/sec                  
+                 9      cpu-migrations            #    0,000 K/sec                  
+             1.283      page-faults               #    0,052 K/sec                  
+    19.669.994.198      cycles                    #    0,800 GHz                    
+    34.953.067.617      instructions              #    1,78  insn per cycle         
+     5.008.457.162      branches                  #  203,725 M/sec                  
+         3.432.607      branch-misses             #    0,07% of all branches        
+
+       6,146985940 seconds time elapsed
+
+img-aos <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             29,46 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             61,94 Joules energy-pkg                                                  
+             14,84 Joules energy-ram                                                  
+
+       6,152308597 seconds time elapsed
+
+img-soa <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          6.453,21 msec cpu-clock                 #    3,996 CPUs utilized          
+               780      context-switches          #    0,121 K/sec                  
+                 7      cpu-migrations            #    0,001 K/sec                  
+             1.419      page-faults               #    0,220 K/sec                  
+     4.247.097.422      cycles                    #    0,658 GHz                    
+     7.236.866.963      instructions              #    1,70  insn per cycle         
+     1.059.862.542      branches                  #  164,238 M/sec                  
+           610.681      branch-misses             #    0,06% of all branches        
+
+       1,614906907 seconds time elapsed
+
+img-soa <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              4,05 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             10,24 Joules energy-pkg                                                  
+              2,93 Joules energy-ram                                                  
+
+       1,218904847 seconds time elapsed
+
+img-soa <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          2.443,48 msec cpu-clock                 #    3,993 CPUs utilized          
+               110      context-switches          #    0,045 K/sec                  
+                 4      cpu-migrations            #    0,002 K/sec                  
+             1.925      page-faults               #    0,788 K/sec                  
+     2.042.443.174      cycles                    #    0,836 GHz                    
+     3.630.515.447      instructions              #    1,78  insn per cycle         
+       577.565.204      branches                  #  236,370 M/sec                  
+            81.086      branch-misses             #    0,01% of all branches        
+
+       0,611897467 seconds time elapsed
+
+img-soa <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,10 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              6,35 Joules energy-pkg                                                  
+              1,47 Joules energy-ram                                                  
+
+       0,610203144 seconds time elapsed
+
+img-soa <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         32.985,19 msec cpu-clock                 #    3,999 CPUs utilized          
+             1.161      context-switches          #    0,035 K/sec                  
+                14      cpu-migrations            #    0,000 K/sec                  
+             2.823      page-faults               #    0,086 K/sec                  
+    26.828.440.889      cycles                    #    0,813 GHz                    
+    50.120.017.876      instructions              #    1,87  insn per cycle         
+     6.734.225.627      branches                  #  204,159 M/sec                  
+         3.612.578      branch-misses             #    0,05% of all branches        
+
+       8,247502281 seconds time elapsed
+
+img-soa <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             40,99 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             84,45 Joules energy-pkg                                                  
+             19,91 Joules energy-ram                                                  
+
+       8,251756102 seconds time elapsed
+
+====================================
+<<GUIDED>> SCHEDULING, <<2>> THREADS
+====================================
+img-aos <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          3.738,85 msec cpu-clock                 #    3,997 CPUs utilized          
+               816      context-switches          #    0,218 K/sec                  
+                13      cpu-migrations            #    0,003 K/sec                  
+               910      page-faults               #    0,243 K/sec                  
+     2.900.609.178      cycles                    #    0,776 GHz                    
+     4.708.851.976      instructions              #    1,62  insn per cycle         
+       688.796.077      branches                  #  184,227 M/sec                  
+           570.171      branch-misses             #    0,08% of all branches        
+
+       0,935436409 seconds time elapsed
+
+img-aos <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,96 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              8,43 Joules energy-pkg                                                  
+              2,22 Joules energy-ram                                                  
+
+       0,937259115 seconds time elapsed
+
+img-aos <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+            820,43 msec cpu-clock                 #    3,971 CPUs utilized          
+               100      context-switches          #    0,122 K/sec                  
+                 9      cpu-migrations            #    0,011 K/sec                  
+               392      page-faults               #    0,478 K/sec                  
+       921.205.803      cycles                    #    1,123 GHz                    
+     1.673.360.101      instructions              #    1,82  insn per cycle         
+       279.635.756      branches                  #  340,839 M/sec                  
+            61.478      branch-misses             #    0,02% of all branches        
+
+       0,206596688 seconds time elapsed
+
+img-aos <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              1,38 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              2,46 Joules energy-pkg                                                  
+              0,50 Joules energy-ram                                                  
+
+       0,206633501 seconds time elapsed
+
+img-aos <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         13.658,48 msec cpu-clock                 #    3,999 CPUs utilized          
+               982      context-switches          #    0,072 K/sec                  
+                17      cpu-migrations            #    0,001 K/sec                  
+             1.288      page-faults               #    0,094 K/sec                  
+    19.666.249.104      cycles                    #    1,440 GHz                    
+    34.953.862.478      instructions              #    1,78  insn per cycle         
+     5.008.944.120      branches                  #  366,728 M/sec                  
+         3.326.513      branch-misses             #    0,07% of all branches        
+
+       3,415240290 seconds time elapsed
+
+img-aos <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             28,91 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             46,47 Joules energy-pkg                                                  
+              8,21 Joules energy-ram                                                  
+
+       3,414223524 seconds time elapsed
+
+img-soa <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          5.509,44 msec cpu-clock                 #    3,998 CPUs utilized          
+               812      context-switches          #    0,147 K/sec                  
+                 7      cpu-migrations            #    0,001 K/sec                  
+             1.424      page-faults               #    0,258 K/sec                  
+     4.382.028.442      cycles                    #    0,795 GHz                    
+     7.238.554.636      instructions              #    1,65  insn per cycle         
+     1.060.314.322      branches                  #  192,454 M/sec                  
+         4.284.888      branch-misses             #    0,40% of all branches        
+
+       1,378107617 seconds time elapsed
+
+img-soa <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              4,02 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              8,63 Joules energy-pkg                                                  
+              2,25 Joules energy-ram                                                  
+
+       0,943906417 seconds time elapsed
+
+img-soa <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          2.244,27 msec cpu-clock                 #    3,995 CPUs utilized          
+               109      context-switches          #    0,049 K/sec                  
+                 8      cpu-migrations            #    0,004 K/sec                  
+             1.927      page-faults               #    0,859 K/sec                  
+     2.128.563.297      cycles                    #    0,948 GHz                    
+     3.633.822.721      instructions              #    1,71  insn per cycle         
+       578.500.784      branches                  #  257,767 M/sec                  
+            85.260      branch-misses             #    0,01% of all branches        
+
+       0,561707935 seconds time elapsed
+
+img-soa <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,19 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              6,18 Joules energy-pkg                                                  
+              1,36 Joules energy-ram                                                  
+
+       0,561241242 seconds time elapsed
+
+img-soa <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         18.702,94 msec cpu-clock                 #    3,999 CPUs utilized          
+             1.050      context-switches          #    0,056 K/sec                  
+                14      cpu-migrations            #    0,001 K/sec                  
+             3.342      page-faults               #    0,179 K/sec                  
+    26.826.606.999      cycles                    #    1,434 GHz                    
+    50.108.359.417      instructions              #    1,87  insn per cycle         
+     6.731.682.120      branches                  #  359,926 M/sec                  
+         3.437.540      branch-misses             #    0,05% of all branches        
+
+       4,676983501 seconds time elapsed
+
+img-soa <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             40,23 Joules energy-cores                                                
+              0,04 Joules energy-gpu                                                  
+             64,38 Joules energy-pkg                                                  
+             11,30 Joules energy-ram                                                  
+
+       4,686642922 seconds time elapsed
+
+====================================
+<<GUIDED>> SCHEDULING, <<4>> THREADS
+====================================
+img-aos <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          3.194,26 msec cpu-clock                 #    3,997 CPUs utilized          
+               807      context-switches          #    0,253 K/sec                  
+                17      cpu-migrations            #    0,005 K/sec                  
+               413      page-faults               #    0,129 K/sec                  
+     2.907.081.456      cycles                    #    0,910 GHz                    
+     4.717.647.647      instructions              #    1,62  insn per cycle         
+       691.714.745      branches                  #  216,549 M/sec                  
+           561.023      branch-misses             #    0,08% of all branches        
+
+       0,799237518 seconds time elapsed
+
+img-aos <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,81 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,77 Joules energy-pkg                                                  
+              1,87 Joules energy-ram                                                  
+
+       0,777987176 seconds time elapsed
+
+img-aos <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+            735,68 msec cpu-clock                 #    3,969 CPUs utilized          
+               117      context-switches          #    0,159 K/sec                  
+                13      cpu-migrations            #    0,018 K/sec                  
+               396      page-faults               #    0,538 K/sec                  
+     1.086.372.327      cycles                    #    1,477 GHz                    
+     1.682.004.132      instructions              #    1,55  insn per cycle         
+       282.080.972      branches                  #  383,428 M/sec                  
+            62.122      branch-misses             #    0,02% of all branches        
+
+       0,185358493 seconds time elapsed
+
+img-aos <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              1,47 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              2,43 Joules energy-pkg                                                  
+              0,45 Joules energy-ram                                                  
+
+       0,185756120 seconds time elapsed
+
+img-aos <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          8.471,23 msec cpu-clock                 #    3,999 CPUs utilized          
+               912      context-switches          #    0,108 K/sec                  
+                16      cpu-migrations            #    0,002 K/sec                  
+             1.393      page-faults               #    0,164 K/sec                  
+    19.660.364.085      cycles                    #    2,321 GHz                    
+    34.960.752.581      instructions              #    1,78  insn per cycle         
+     5.010.878.591      branches                  #  591,517 M/sec                  
+         3.196.351      branch-misses             #    0,06% of all branches        
+
+       2,118375460 seconds time elapsed
+
+img-aos <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             25,86 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             36,48 Joules energy-pkg                                                  
+              5,10 Joules energy-ram                                                  
+
+       2,122796552 seconds time elapsed
+
+img-soa <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          4.837,86 msec cpu-clock                 #    3,995 CPUs utilized          
+               811      context-switches          #    0,168 K/sec                  
+                19      cpu-migrations            #    0,004 K/sec                  
+             1.435      page-faults               #    0,297 K/sec                  
+     4.290.262.176      cycles                    #    0,887 GHz                    
+     7.245.389.052      instructions              #    1,69  insn per cycle         
+     1.062.121.764      branches                  #  219,544 M/sec                  
+           582.334      branch-misses             #    0,05% of all branches        
+
+       1,211059111 seconds time elapsed
+
+img-soa <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,83 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,69 Joules energy-pkg                                                  
+              1,90 Joules energy-ram                                                  
+
+       0,801396647 seconds time elapsed
+
+img-soa <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          2.157,55 msec cpu-clock                 #    3,995 CPUs utilized          
+               151      context-switches          #    0,070 K/sec                  
+                16      cpu-migrations            #    0,007 K/sec                  
+             1.931      page-faults               #    0,895 K/sec                  
+     2.288.232.414      cycles                    #    1,061 GHz                    
+     3.642.897.230      instructions              #    1,59  insn per cycle         
+       581.056.303      branches                  #  269,313 M/sec                  
+            86.407      branch-misses             #    0,01% of all branches        
+
+       0,540025564 seconds time elapsed
+
+img-soa <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,27 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              6,13 Joules energy-pkg                                                  
+              1,30 Joules energy-ram                                                  
+
+       0,539139889 seconds time elapsed
+
+img-soa <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         11.895,63 msec cpu-clock                 #    3,999 CPUs utilized          
+               857      context-switches          #    0,072 K/sec                  
+                14      cpu-migrations            #    0,001 K/sec                  
+             2.826      page-faults               #    0,238 K/sec                  
+    26.750.411.309      cycles                    #    2,249 GHz                    
+    50.095.458.012      instructions              #    1,87  insn per cycle         
+     6.729.595.233      branches                  #  565,720 M/sec                  
+         3.217.677      branch-misses             #    0,05% of all branches        
+
+       2,974840969 seconds time elapsed
+
+img-soa <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             36,28 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             51,41 Joules energy-pkg                                                  
+              7,18 Joules energy-ram                                                  
+
+       2,984831957 seconds time elapsed
+
+====================================
+<<GUIDED>> SCHEDULING, <<8>> THREADS
+====================================
+img-aos <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          4.035,96 msec cpu-clock                 #    3,994 CPUs utilized          
+               926      context-switches          #    0,229 K/sec                  
+                14      cpu-migrations            #    0,003 K/sec                  
+               929      page-faults               #    0,230 K/sec                  
+     2.890.751.897      cycles                    #    0,716 GHz                    
+     4.706.234.806      instructions              #    1,63  insn per cycle         
+       688.002.055      branches                  #  170,468 M/sec                  
+           596.099      branch-misses             #    0,09% of all branches        
+
+       1,010531245 seconds time elapsed
+
+img-aos <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,73 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,55 Joules energy-pkg                                                  
+              1,91 Joules energy-ram                                                  
+
+       0,807120348 seconds time elapsed
+
+img-aos <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+            749,53 msec cpu-clock                 #    3,969 CPUs utilized          
+               165      context-switches          #    0,220 K/sec                  
+                17      cpu-migrations            #    0,023 K/sec                  
+               917      page-faults               #    0,001 M/sec                  
+     1.092.153.440      cycles                    #    1,457 GHz                    
+     1.671.929.266      instructions              #    1,53  insn per cycle         
+       278.961.800      branches                  #  372,183 M/sec                  
+            69.203      branch-misses             #    0,02% of all branches        
+
+       0,188851389 seconds time elapsed
+
+img-aos <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              1,47 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              2,44 Joules energy-pkg                                                  
+              0,45 Joules energy-ram                                                  
+
+       0,185568582 seconds time elapsed
+
+img-aos <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          8.457,29 msec cpu-clock                 #    4,000 CPUs utilized          
+             1.460      context-switches          #    0,173 K/sec                  
+                19      cpu-migrations            #    0,002 K/sec                  
+               934      page-faults               #    0,110 K/sec                  
+    19.637.245.264      cycles                    #    2,322 GHz                    
+    34.950.336.775      instructions              #    1,78  insn per cycle         
+     5.007.884.682      branches                  #  592,138 M/sec                  
+         3.242.186      branch-misses             #    0,06% of all branches        
+
+       2,114526442 seconds time elapsed
+
+img-aos <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             25,81 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             36,34 Joules energy-pkg                                                  
+              5,09 Joules energy-ram                                                  
+
+       2,119561641 seconds time elapsed
+
+img-soa <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          4.855,02 msec cpu-clock                 #    3,998 CPUs utilized          
+               928      context-switches          #    0,191 K/sec                  
+                16      cpu-migrations            #    0,003 K/sec                  
+             1.432      page-faults               #    0,295 K/sec                  
+     4.254.749.668      cycles                    #    0,876 GHz                    
+     7.234.768.787      instructions              #    1,70  insn per cycle         
+     1.059.226.094      branches                  #  218,171 M/sec                  
+           590.467      branch-misses             #    0,06% of all branches        
+
+       1,214314625 seconds time elapsed
+
+img-soa <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,74 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,45 Joules energy-pkg                                                  
+              1,90 Joules energy-ram                                                  
+
+       0,800138832 seconds time elapsed
+
+img-soa <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          2.156,70 msec cpu-clock                 #    3,991 CPUs utilized          
+               188      context-switches          #    0,087 K/sec                  
+                13      cpu-migrations            #    0,006 K/sec                  
+             1.428      page-faults               #    0,662 K/sec                  
+     2.290.983.790      cycles                    #    1,062 GHz                    
+     3.629.629.359      instructions              #    1,58  insn per cycle         
+       577.431.727      branches                  #  267,739 M/sec                  
+            87.040      branch-misses             #    0,02% of all branches        
+
+       0,540408478 seconds time elapsed
+
+img-soa <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,28 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              6,15 Joules energy-pkg                                                  
+              1,31 Joules energy-ram                                                  
+
+       0,540209815 seconds time elapsed
+
+img-soa <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         11.914,26 msec cpu-clock                 #    3,998 CPUs utilized          
+             1.599      context-switches          #    0,134 K/sec                  
+                20      cpu-migrations            #    0,002 K/sec                  
+             2.834      page-faults               #    0,238 K/sec                  
+    26.736.538.131      cycles                    #    2,244 GHz                    
+    50.086.861.742      instructions              #    1,87  insn per cycle         
+     6.726.984.578      branches                  #  564,616 M/sec                  
+         3.301.707      branch-misses             #    0,05% of all branches        
+
+       2,979753242 seconds time elapsed
+
+img-soa <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             36,38 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             51,33 Joules energy-pkg                                                  
+              7,18 Joules energy-ram                                                  
+
+       2,980919718 seconds time elapsed
+
+=====================================
+<<GUIDED>> SCHEDULING, <<16>> THREADS
+=====================================
+img-aos <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          3.217,00 msec cpu-clock                 #    3,996 CPUs utilized          
+             1.039      context-switches          #    0,323 K/sec                  
+                39      cpu-migrations            #    0,012 K/sec                  
+               439      page-faults               #    0,136 K/sec                  
+     2.880.055.047      cycles                    #    0,895 GHz                    
+     4.704.356.187      instructions              #    1,63  insn per cycle         
+       687.538.167      branches                  #  213,721 M/sec                  
+           577.160      branch-misses             #    0,08% of all branches        
+
+       0,805140599 seconds time elapsed
+
+img-aos <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,89 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              8,08 Joules energy-pkg                                                  
+              1,91 Joules energy-ram                                                  
+
+       0,805966485 seconds time elapsed
+
+img-aos <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+            760,58 msec cpu-clock                 #    3,985 CPUs utilized          
+               247      context-switches          #    0,325 K/sec                  
+                34      cpu-migrations            #    0,045 K/sec                  
+               504      page-faults               #    0,663 K/sec                  
+     1.099.247.890      cycles                    #    1,445 GHz                    
+     1.674.004.606      instructions              #    1,52  insn per cycle         
+       279.340.502      branches                  #  367,272 M/sec                  
+            94.793      branch-misses             #    0,03% of all branches        
+
+       0,190868951 seconds time elapsed
+
+img-aos <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              1,50 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              2,49 Joules energy-pkg                                                  
+              0,46 Joules energy-ram                                                  
+
+       0,190507672 seconds time elapsed
+
+img-aos <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          8.460,66 msec cpu-clock                 #    3,998 CPUs utilized          
+             1.734      context-switches          #    0,205 K/sec                  
+                32      cpu-migrations            #    0,004 K/sec                  
+             1.314      page-faults               #    0,155 K/sec                  
+    19.628.345.909      cycles                    #    2,320 GHz                    
+    34.950.032.517      instructions              #    1,78  insn per cycle         
+     5.007.887.447      branches                  #  591,902 M/sec                  
+         3.202.994      branch-misses             #    0,06% of all branches        
+
+       2,116381913 seconds time elapsed
+
+img-aos <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             25,91 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             36,33 Joules energy-pkg                                                  
+              5,09 Joules energy-ram                                                  
+
+       2,117110807 seconds time elapsed
+
+img-soa <mono> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          4.874,23 msec cpu-clock                 #    3,998 CPUs utilized          
+               995      context-switches          #    0,204 K/sec                  
+                36      cpu-migrations            #    0,007 K/sec                  
+             1.564      page-faults               #    0,321 K/sec                  
+     4.260.861.448      cycles                    #    0,874 GHz                    
+     7.240.654.547      instructions              #    1,70  insn per cycle         
+     1.060.358.195      branches                  #  217,544 M/sec                  
+           637.506      branch-misses             #    0,06% of all branches        
+
+       1,219148071 seconds time elapsed
+
+img-soa <mono> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,83 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              7,78 Joules energy-pkg                                                  
+              1,93 Joules energy-ram                                                  
+
+       0,812404755 seconds time elapsed
+
+img-soa <histo> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+          2.181,48 msec cpu-clock                 #    3,996 CPUs utilized          
+               245      context-switches          #    0,112 K/sec                  
+                35      cpu-migrations            #    0,016 K/sec                  
+             1.959      page-faults               #    0,898 K/sec                  
+     2.303.331.119      cycles                    #    1,056 GHz                    
+     3.632.283.581      instructions              #    1,58  insn per cycle         
+       577.930.837      branches                  #  264,926 M/sec                  
+            97.794      branch-misses             #    0,02% of all branches        
+
+       0,545982453 seconds time elapsed
+
+img-soa <histo> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+              3,30 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+              6,21 Joules energy-pkg                                                  
+              1,32 Joules energy-ram                                                  
+
+       0,547568308 seconds time elapsed
+
+img-soa <gauss> performance stats: 
+
+ Performance counter stats for 'system wide':
+
+         11.920,97 msec cpu-clock                 #    3,999 CPUs utilized          
+             1.904      context-switches          #    0,160 K/sec                  
+                44      cpu-migrations            #    0,004 K/sec                  
+             2.854      page-faults               #    0,239 K/sec                  
+    26.754.361.523      cycles                    #    2,244 GHz                    
+    50.088.272.457      instructions              #    1,87  insn per cycle         
+     6.727.246.308      branches                  #  564,321 M/sec                  
+         3.280.157      branch-misses             #    0,05% of all branches        
+
+       2,980763066 seconds time elapsed
+
+img-soa <gauss> energy stats: 
+
+ Performance counter stats for 'system wide':
+
+             36,35 Joules energy-cores                                                
+              0,00 Joules energy-gpu                                                  
+             51,53 Joules energy-pkg                                                  
+              7,18 Joules energy-ram                                                  
+
+       2,981898963 seconds time elapsed
+

@@ -1,0 +1,7 @@
+Input path: "./in"
+Output path: "./extract"
+File: ./in/sabatini.bmp
+File: ./in/sabatini.bmp time(792880)
+  Load time: 119758
+  Process time: 150159
+  Store time: 673121
