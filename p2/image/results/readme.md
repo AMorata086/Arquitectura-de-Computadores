@@ -1,0 +1,1 @@
+This directory will contain the results of the execution of perf in Avignon.
