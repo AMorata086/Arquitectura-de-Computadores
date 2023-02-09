@@ -1,0 +1,16 @@
+Task 3.1
+executing RELEASE version 3 times
+counter = 500000
+Time = 796 microseconds
+counter = 500000
+Time = 737 microseconds
+counter = 600000
+Time = 1147 microseconds
+executing DEBUG version 3 times
+counter = 391056
+Time = 15396 microseconds
+counter = 360132
+Time = 15273 microseconds
+counter = 440417
+Time = 15205 microseconds
+Program execution finished

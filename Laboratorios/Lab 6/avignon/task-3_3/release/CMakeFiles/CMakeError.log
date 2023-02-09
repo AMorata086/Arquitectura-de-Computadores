@@ -1,0 +1,60 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/alumnos/a0405846/lab6/task-3_3/release/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_45ba1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_45ba1.dir/build.make CMakeFiles/cmTC_45ba1.dir/build
+gmake[1]: se entra en el directorio '/home/alumnos/a0405846/lab6/task-3_3/release/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_45ba1.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_45ba1.dir/src.c.o -c /home/alumnos/a0405846/lab6/task-3_3/release/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_45ba1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45ba1.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_45ba1.dir/src.c.o -o cmTC_45ba1 
+/usr/bin/ld: CMakeFiles/cmTC_45ba1.dir/src.c.o: en la función `main':
+src.c:(.text+0x2f): referencia a `pthread_create' sin definir
+/usr/bin/ld: src.c:(.text+0x3b): referencia a `pthread_detach' sin definir
+/usr/bin/ld: src.c:(.text+0x47): referencia a `pthread_cancel' sin definir
+/usr/bin/ld: src.c:(.text+0x58): referencia a `pthread_join' sin definir
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_45ba1.dir/build.make:99: cmTC_45ba1] Error 1
+gmake[1]: se sale del directorio '/home/alumnos/a0405846/lab6/task-3_3/release/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_45ba1/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/alumnos/a0405846/lab6/task-3_3/release/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_77611/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_77611.dir/build.make CMakeFiles/cmTC_77611.dir/build
+gmake[1]: se entra en el directorio '/home/alumnos/a0405846/lab6/task-3_3/release/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_77611.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_77611.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.24/Modules/CheckFunctionExists.c
+Linking C executable cmTC_77611
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_77611.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_77611.dir/CheckFunctionExists.c.o -o cmTC_77611  -lpthreads 
+/usr/bin/ld: no se puede encontrar -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_77611.dir/build.make:99: cmTC_77611] Error 1
+gmake[1]: se sale del directorio '/home/alumnos/a0405846/lab6/task-3_3/release/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_77611/fast] Error 2
+
+
+

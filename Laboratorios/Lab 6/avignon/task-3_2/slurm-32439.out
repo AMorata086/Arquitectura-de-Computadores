@@ -1,0 +1,421 @@
+Task 3.2
+executing RELEASE version w/ Thread Sanitizer 3 times
+==================
+WARNING: ThreadSanitizer: data race (pid=1216843)
+  Read of size 8 at 0x7ffe3b750b70 by thread T2:
+    #0 std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run() <null> (counter+0x40185b)
+    #1 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Previous write of size 8 at 0x7ffe3b750b70 by thread T1:
+    #0 std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run() <null> (counter+0x4018a1)
+    #1 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Location is stack of main thread.
+
+  Location is global '<null>' at 0x000000000000 ([stack]+0x1eb70)
+
+  Thread T2 (tid=1216846, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+
+  Thread T1 (tid=1216845, finished) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+
+SUMMARY: ThreadSanitizer: data race (/home/alumnos/a0405846/lab6/task-3_2/release-tsan/counter+0x40185b) in std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run()
+==================
+==================
+WARNING: ThreadSanitizer: data race (pid=1216843)
+  Read of size 8 at 0x7ffe3b750b78 by thread T2:
+    #0 std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run() <null> (counter+0x40186c)
+    #1 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Previous write of size 8 at 0x7ffe3b750b78 by thread T1:
+    #0 std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run() <null> (counter+0x4018b2)
+    #1 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Location is stack of main thread.
+
+  Location is global '<null>' at 0x000000000000 ([stack]+0x1eb78)
+
+  Thread T2 (tid=1216846, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+
+  Thread T1 (tid=1216845, finished) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+
+SUMMARY: ThreadSanitizer: data race (/home/alumnos/a0405846/lab6/task-3_2/release-tsan/counter+0x40186c) in std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run()
+==================
+counter = 1.6e+06
+Time = 128431 microseconds
+ThreadSanitizer: reported 2 warnings
+==================
+WARNING: ThreadSanitizer: data race (pid=1216861)
+  Read of size 8 at 0x7ffc943daff0 by thread T2:
+    #0 std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run() <null> (counter+0x40185b)
+    #1 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Previous write of size 8 at 0x7ffc943daff0 by thread T1:
+    #0 std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run() <null> (counter+0x4018a1)
+    #1 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Location is stack of main thread.
+
+  Location is global '<null>' at 0x000000000000 ([stack]+0x1eff0)
+
+  Thread T2 (tid=1216864, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+
+  Thread T1 (tid=1216863, finished) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+
+SUMMARY: ThreadSanitizer: data race (/home/alumnos/a0405846/lab6/task-3_2/release-tsan/counter+0x40185b) in std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run()
+==================
+==================
+WARNING: ThreadSanitizer: data race (pid=1216861)
+  Read of size 8 at 0x7ffc943daff8 by thread T2:
+    #0 std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run() <null> (counter+0x40186c)
+    #1 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Previous write of size 8 at 0x7ffc943daff8 by thread T1:
+    #0 std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run() <null> (counter+0x4018b2)
+    #1 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Location is stack of main thread.
+
+  Location is global '<null>' at 0x000000000000 ([stack]+0x1eff8)
+
+  Thread T2 (tid=1216864, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+
+  Thread T1 (tid=1216863, finished) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+
+SUMMARY: ThreadSanitizer: data race (/home/alumnos/a0405846/lab6/task-3_2/release-tsan/counter+0x40186c) in std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run()
+==================
+counter = 1.6e+06
+Time = 127627 microseconds
+ThreadSanitizer: reported 2 warnings
+==================
+WARNING: ThreadSanitizer: data race (pid=1216879)
+  Read of size 8 at 0x7ffdd2adc9a0 by thread T2:
+    #0 std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run() <null> (counter+0x40185b)
+    #1 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Previous write of size 8 at 0x7ffdd2adc9a0 by thread T1:
+    #0 std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run() <null> (counter+0x4018a1)
+    #1 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Location is stack of main thread.
+
+  Location is global '<null>' at 0x000000000000 ([stack]+0x1f9a0)
+
+  Thread T2 (tid=1216882, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+
+  Thread T1 (tid=1216881, finished) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+
+SUMMARY: ThreadSanitizer: data race (/home/alumnos/a0405846/lab6/task-3_2/release-tsan/counter+0x40185b) in std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run()
+==================
+==================
+WARNING: ThreadSanitizer: data race (pid=1216879)
+  Read of size 8 at 0x7ffdd2adc9a8 by thread T2:
+    #0 std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run() <null> (counter+0x40186c)
+    #1 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Previous write of size 8 at 0x7ffdd2adc9a8 by thread T1:
+    #0 std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run() <null> (counter+0x4018b2)
+    #1 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Location is stack of main thread.
+
+  Location is global '<null>' at 0x000000000000 ([stack]+0x1f9a8)
+
+  Thread T2 (tid=1216882, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+
+  Thread T1 (tid=1216881, finished) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+
+SUMMARY: ThreadSanitizer: data race (/home/alumnos/a0405846/lab6/task-3_2/release-tsan/counter+0x40186c) in std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda()#1}> > >::_M_run()
+==================
+counter = 1.6e+06
+Time = 126783 microseconds
+ThreadSanitizer: reported 2 warnings
+executing DEBUG version w/ Thread Sanitizer 3 times
+==================
+WARNING: ThreadSanitizer: data race (pid=1216897)
+  Read of size 8 at 0x7ffe1e719460 by thread T2:
+    #0 counter::update() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:9 (counter+0x402225)
+    #1 operator() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:30 (counter+0x401395)
+    #2 __invoke_impl<void, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:61 (counter+0x401f23)
+    #3 __invoke<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:96 (counter+0x401eb8)
+    #4 _M_invoke<0> /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:252 (counter+0x401e1e)
+    #5 operator() /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:259 (counter+0x401dc8)
+    #6 _M_run /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:210 (counter+0x401d82)
+    #7 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Previous write of size 8 at 0x7ffe1e719460 by thread T1:
+    #0 counter::update() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:9 (counter+0x40224a)
+    #1 operator() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:30 (counter+0x401395)
+    #2 __invoke_impl<void, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:61 (counter+0x401f23)
+    #3 __invoke<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:96 (counter+0x401eb8)
+    #4 _M_invoke<0> /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:252 (counter+0x401e1e)
+    #5 operator() /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:259 (counter+0x401dc8)
+    #6 _M_run /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:210 (counter+0x401d82)
+    #7 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Location is stack of main thread.
+
+  Location is global '<null>' at 0x000000000000 ([stack]+0x1e460)
+
+  Thread T2 (tid=1216900, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+    #2 construct_at<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/stl_construct.h:97 (counter+0x4019f5)
+    #3 construct<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/alloc_traits.h:518 (counter+0x4016d6)
+    #4 _M_realloc_insert<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:462 (counter+0x4017de)
+    #5 emplace_back<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:123 (counter+0x401656)
+    #6 main /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:28 (counter+0x40142c)
+
+  Thread T1 (tid=1216899, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+    #2 construct_at<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/stl_construct.h:97 (counter+0x4019f5)
+    #3 construct<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/alloc_traits.h:518 (counter+0x4016d6)
+    #4 _M_realloc_insert<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:462 (counter+0x4017de)
+    #5 emplace_back<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:123 (counter+0x401656)
+    #6 main /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:28 (counter+0x40142c)
+
+SUMMARY: ThreadSanitizer: data race /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:9 in counter::update()
+==================
+==================
+WARNING: ThreadSanitizer: data race (pid=1216897)
+  Read of size 8 at 0x7ffe1e719468 by thread T2:
+    #0 counter::update() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:9 (counter+0x402267)
+    #1 operator() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:30 (counter+0x401395)
+    #2 __invoke_impl<void, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:61 (counter+0x401f23)
+    #3 __invoke<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:96 (counter+0x401eb8)
+    #4 _M_invoke<0> /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:252 (counter+0x401e1e)
+    #5 operator() /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:259 (counter+0x401dc8)
+    #6 _M_run /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:210 (counter+0x401d82)
+    #7 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Previous write of size 8 at 0x7ffe1e719468 by thread T1:
+    [failed to restore the stack]
+
+  Location is stack of main thread.
+
+  Location is global '<null>' at 0x000000000000 ([stack]+0x1e468)
+
+  Thread T2 (tid=1216900, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+    #2 construct_at<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/stl_construct.h:97 (counter+0x4019f5)
+    #3 construct<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/alloc_traits.h:518 (counter+0x4016d6)
+    #4 _M_realloc_insert<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:462 (counter+0x4017de)
+    #5 emplace_back<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:123 (counter+0x401656)
+    #6 main /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:28 (counter+0x40142c)
+
+  Thread T1 (tid=1216899, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+    #2 construct_at<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/stl_construct.h:97 (counter+0x4019f5)
+    #3 construct<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/alloc_traits.h:518 (counter+0x4016d6)
+    #4 _M_realloc_insert<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:462 (counter+0x4017de)
+    #5 emplace_back<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:123 (counter+0x401656)
+    #6 main /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:28 (counter+0x40142c)
+
+SUMMARY: ThreadSanitizer: data race /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:9 in counter::update()
+==================
+counter = 526824
+Time = 1027296 microseconds
+ThreadSanitizer: reported 2 warnings
+==================
+WARNING: ThreadSanitizer: data race (pid=1216915)
+  Read of size 8 at 0x7ffeebd44ad0 by thread T2:
+    #0 counter::update() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:9 (counter+0x402225)
+    #1 operator() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:30 (counter+0x401395)
+    #2 __invoke_impl<void, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:61 (counter+0x401f23)
+    #3 __invoke<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:96 (counter+0x401eb8)
+    #4 _M_invoke<0> /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:252 (counter+0x401e1e)
+    #5 operator() /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:259 (counter+0x401dc8)
+    #6 _M_run /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:210 (counter+0x401d82)
+    #7 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Previous write of size 8 at 0x7ffeebd44ad0 by thread T1:
+    #0 counter::update() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:9 (counter+0x40224a)
+    #1 operator() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:30 (counter+0x401395)
+    #2 __invoke_impl<void, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:61 (counter+0x401f23)
+    #3 __invoke<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:96 (counter+0x401eb8)
+    #4 _M_invoke<0> /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:252 (counter+0x401e1e)
+    #5 operator() /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:259 (counter+0x401dc8)
+    #6 _M_run /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:210 (counter+0x401d82)
+    #7 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Location is stack of main thread.
+
+  Location is global '<null>' at 0x000000000000 ([stack]+0x1fad0)
+
+  Thread T2 (tid=1216918, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+    #2 construct_at<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/stl_construct.h:97 (counter+0x4019f5)
+    #3 construct<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/alloc_traits.h:518 (counter+0x4016d6)
+    #4 _M_realloc_insert<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:462 (counter+0x4017de)
+    #5 emplace_back<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:123 (counter+0x401656)
+    #6 main /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:28 (counter+0x40142c)
+
+  Thread T1 (tid=1216917, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+    #2 construct_at<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/stl_construct.h:97 (counter+0x4019f5)
+    #3 construct<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/alloc_traits.h:518 (counter+0x4016d6)
+    #4 _M_realloc_insert<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:462 (counter+0x4017de)
+    #5 emplace_back<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:123 (counter+0x401656)
+    #6 main /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:28 (counter+0x40142c)
+
+SUMMARY: ThreadSanitizer: data race /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:9 in counter::update()
+==================
+==================
+WARNING: ThreadSanitizer: data race (pid=1216915)
+  Read of size 8 at 0x7ffeebd44ad8 by thread T2:
+    #0 counter::update() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:9 (counter+0x402267)
+    #1 operator() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:30 (counter+0x401395)
+    #2 __invoke_impl<void, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:61 (counter+0x401f23)
+    #3 __invoke<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:96 (counter+0x401eb8)
+    #4 _M_invoke<0> /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:252 (counter+0x401e1e)
+    #5 operator() /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:259 (counter+0x401dc8)
+    #6 _M_run /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:210 (counter+0x401d82)
+    #7 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Previous write of size 8 at 0x7ffeebd44ad8 by thread T1:
+    [failed to restore the stack]
+
+  Location is stack of main thread.
+
+  Location is global '<null>' at 0x000000000000 ([stack]+0x1fad8)
+
+  Thread T2 (tid=1216918, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+    #2 construct_at<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/stl_construct.h:97 (counter+0x4019f5)
+    #3 construct<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/alloc_traits.h:518 (counter+0x4016d6)
+    #4 _M_realloc_insert<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:462 (counter+0x4017de)
+    #5 emplace_back<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:123 (counter+0x401656)
+    #6 main /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:28 (counter+0x40142c)
+
+  Thread T1 (tid=1216917, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+    #2 construct_at<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/stl_construct.h:97 (counter+0x4019f5)
+    #3 construct<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/alloc_traits.h:518 (counter+0x4016d6)
+    #4 _M_realloc_insert<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:462 (counter+0x4017de)
+    #5 emplace_back<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:123 (counter+0x401656)
+    #6 main /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:28 (counter+0x40142c)
+
+SUMMARY: ThreadSanitizer: data race /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:9 in counter::update()
+==================
+counter = 497554
+Time = 1019994 microseconds
+ThreadSanitizer: reported 2 warnings
+==================
+WARNING: ThreadSanitizer: data race (pid=1216933)
+  Read of size 8 at 0x7ffd815b80e0 by thread T2:
+    #0 counter::update() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:9 (counter+0x402225)
+    #1 operator() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:30 (counter+0x401395)
+    #2 __invoke_impl<void, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:61 (counter+0x401f23)
+    #3 __invoke<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:96 (counter+0x401eb8)
+    #4 _M_invoke<0> /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:252 (counter+0x401e1e)
+    #5 operator() /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:259 (counter+0x401dc8)
+    #6 _M_run /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:210 (counter+0x401d82)
+    #7 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Previous write of size 8 at 0x7ffd815b80e0 by thread T1:
+    #0 counter::update() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:9 (counter+0x40224a)
+    #1 operator() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:30 (counter+0x401395)
+    #2 __invoke_impl<void, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:61 (counter+0x401f23)
+    #3 __invoke<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:96 (counter+0x401eb8)
+    #4 _M_invoke<0> /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:252 (counter+0x401e1e)
+    #5 operator() /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:259 (counter+0x401dc8)
+    #6 _M_run /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:210 (counter+0x401d82)
+    #7 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Location is stack of main thread.
+
+  Location is global '<null>' at 0x000000000000 ([stack]+0x1f0e0)
+
+  Thread T2 (tid=1216936, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+    #2 construct_at<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/stl_construct.h:97 (counter+0x4019f5)
+    #3 construct<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/alloc_traits.h:518 (counter+0x4016d6)
+    #4 _M_realloc_insert<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:462 (counter+0x4017de)
+    #5 emplace_back<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:123 (counter+0x401656)
+    #6 main /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:28 (counter+0x40142c)
+
+  Thread T1 (tid=1216935, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+    #2 construct_at<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/stl_construct.h:97 (counter+0x4019f5)
+    #3 construct<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/alloc_traits.h:518 (counter+0x4016d6)
+    #4 _M_realloc_insert<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:462 (counter+0x4017de)
+    #5 emplace_back<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:123 (counter+0x401656)
+    #6 main /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:28 (counter+0x40142c)
+
+SUMMARY: ThreadSanitizer: data race /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:9 in counter::update()
+==================
+==================
+WARNING: ThreadSanitizer: data race (pid=1216933)
+  Read of size 8 at 0x7ffd815b80e8 by thread T2:
+    #0 counter::update() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:9 (counter+0x402267)
+    #1 operator() /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:30 (counter+0x401395)
+    #2 __invoke_impl<void, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:61 (counter+0x401f23)
+    #3 __invoke<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/invoke.h:96 (counter+0x401eb8)
+    #4 _M_invoke<0> /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:252 (counter+0x401e1e)
+    #5 operator() /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:259 (counter+0x401dc8)
+    #6 _M_run /opt/gcc-12.1.0/include/c++/12.1.0/bits/std_thread.h:210 (counter+0x401d82)
+    #7 execute_native_thread_routine /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libstdc++-v3/src/c++11/thread.cc:82 (libstdc++.so.6+0xdca22)
+
+  Previous write of size 8 at 0x7ffd815b80e8 by thread T1:
+    [failed to restore the stack]
+
+  Location is stack of main thread.
+
+  Location is global '<null>' at 0x000000000000 ([stack]+0x1f0e8)
+
+  Thread T2 (tid=1216936, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+    #2 construct_at<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/stl_construct.h:97 (counter+0x4019f5)
+    #3 construct<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/alloc_traits.h:518 (counter+0x4016d6)
+    #4 _M_realloc_insert<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:462 (counter+0x4017de)
+    #5 emplace_back<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:123 (counter+0x401656)
+    #6 main /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:28 (counter+0x40142c)
+
+  Thread T1 (tid=1216935, running) created by main thread at:
+    #0 pthread_create /opt/tmp/gcc-12.1.0_source/gcc-12.1.0/libsanitizer/tsan/tsan_interceptors_posix.cpp:1001 (libtsan.so.2+0x62486)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) /opt/tmp/gcc-12.1.0_build/x86_64-unknown-linux-gnu/libstdc++-v3/include/x86_64-unknown-linux-gnu/bits/gthr-default.h:663 (libstdc++.so.6+0xdcd2b)
+    #2 construct_at<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/stl_construct.h:97 (counter+0x4019f5)
+    #3 construct<std::thread, main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/alloc_traits.h:518 (counter+0x4016d6)
+    #4 _M_realloc_insert<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:462 (counter+0x4017de)
+    #5 emplace_back<main()::<lambda()> > /opt/gcc-12.1.0/include/c++/12.1.0/bits/vector.tcc:123 (counter+0x401656)
+    #6 main /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:28 (counter+0x40142c)
+
+SUMMARY: ThreadSanitizer: data race /home/alumnos/a0405846/lab6/task-3_2/counter.cpp:9 in counter::update()
+==================
+counter = 476052
+Time = 1030960 microseconds
+ThreadSanitizer: reported 2 warnings
+Program execution finished

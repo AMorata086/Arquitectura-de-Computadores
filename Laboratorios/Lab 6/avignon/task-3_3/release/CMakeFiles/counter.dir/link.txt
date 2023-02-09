@@ -1,0 +1,1 @@
+/opt/gcc-12.1.0/bin/g++ -O3 -DNDEBUG CMakeFiles/counter.dir/counter.cpp.o -o counter  -lpthread 

@@ -1,0 +1,3 @@
+/home/alumnos/a0405846/lab6/task-3_4/release/CMakeFiles/counter.dir
+/home/alumnos/a0405846/lab6/task-3_4/release/CMakeFiles/edit_cache.dir
+/home/alumnos/a0405846/lab6/task-3_4/release/CMakeFiles/rebuild_cache.dir

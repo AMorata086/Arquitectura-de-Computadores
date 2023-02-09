@@ -1,0 +1,69 @@
+ Performance counter stats for './release/bpred1':
+
+             19,05 msec task-clock                #    0,790 CPUs utilized          
+                 2      context-switches          #    0,105 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+               552      page-faults               #    0,029 M/sec                  
+        64.059.773      cycles                    #    3,363 GHz                    
+        73.716.062      instructions              #    1,15  insn per cycle         
+        10.443.047      branches                  #  548,248 M/sec                  
+         1.525.624      branch-misses             #   14,61% of all branches        
+
+       0,024125672 seconds time elapsed
+
+       0,015637000 seconds user
+       0,003909000 seconds sys
+
+
+Finalizada parte 3.2
+
+ Performance counter stats for './release/bpred1':
+
+        10.409.177      branch-instructions                                         
+         1.530.732      branch-misses             #   14,71% of all branches        
+
+       0,022709514 seconds time elapsed
+
+       0,019416000 seconds user
+       0,000000000 seconds sys
+
+
+Finalizada parte 3.3
+
+ Performance counter stats for './release/bpred2':
+
+             84,74 msec task-clock                #    0,942 CPUs utilized          
+                 5      context-switches          #    0,059 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+               550      page-faults               #    0,006 M/sec                  
+       285.491.775      cycles                    #    3,369 GHz                    
+       209.791.314      instructions              #    0,73  insn per cycle         
+        43.742.609      branches                  #  516,222 M/sec                  
+         9.518.899      branch-misses             #   21,76% of all branches        
+
+       0,089996498 seconds time elapsed
+
+       0,081153000 seconds user
+       0,004057000 seconds sys
+
+
+Finalizada parte 3.4
+
+ Performance counter stats for './release/bpred3':
+
+             15,91 msec task-clock                #    0,703 CPUs utilized          
+                 2      context-switches          #    0,126 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+               549      page-faults               #    0,034 M/sec                  
+        53.313.871      cycles                    #    3,350 GHz                    
+        81.612.510      instructions              #    1,53  insn per cycle         
+         9.423.597      branches                  #  592,122 M/sec                  
+         1.027.404      branch-misses             #   10,90% of all branches        
+
+       0,022625354 seconds time elapsed
+
+       0,013282000 seconds user
+       0,003320000 seconds sys
+
+
+Finalizada parte 3.5

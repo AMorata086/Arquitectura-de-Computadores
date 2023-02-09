@@ -1,0 +1,12 @@
+Task 3.1
+executing RELEASE version 3 times:
+counter = 200000
+Time = 8679 microseconds
+counter = 200000
+Time = 10024 microseconds
+counter = 200000
+Time = 9438 microseconds
+executing RELEASE version w/ Thread Sanitizer:
+counter = 200000
+Time = 118977 microseconds
+Program execution finished
